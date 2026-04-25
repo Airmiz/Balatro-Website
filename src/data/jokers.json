@@ -630,5 +630,29 @@
     "cost": 7,
     "effect": "Allows Straights to be made with gaps of 1 rank (e.g. 10 8 6 5 3).",
     "trigger": { "when": "passive", "effects": [{ "type": "shortcut" }] }
+  },
+  {
+    "id": "drunkard",
+    "name": "Drunkard",
+    "rarity": "common",
+    "cost": 4,
+    "effect": "+1 discard each round.",
+    "trigger": { "when": "passive", "effects": [{ "type": "extra_discard", "value": 1 }] }
+  },
+  {
+    "id": "juggler",
+    "name": "Juggler",
+    "rarity": "common",
+    "cost": 4,
+    "effect": "+1 hand size.",
+    "trigger": { "when": "passive", "effects": [{ "type": "extra_hand_size", "value": 1 }] }
+  },
+  {
+    "id": "troubadour",
+    "name": "Troubadour",
+    "rarity": "uncommon",
+    "cost": 6,
+    "effect": "+2 hand size, -1 hand per round.",
+    "trigger": { "when": "passive", "effects": [{ "type": "extra_hand_size", "value": 2 }] }
   }
 ]

@@ -61,6 +61,16 @@ function nameFromId(id) {
 
 // ---------- Joker evaluation (also used for pack EV) ----------
 
+const JOKER_META_HEURISTIC = {
+  drunkard:    0.30,
+  juggler:     0.25,
+  troubadour:  0.10,
+  paint_brush: 0.25,
+  riff_raff:   0.40,
+  burglar:     0.50,
+  delayed_grat:0.10,
+};
+
 function evalJoker(jokerId, ctx) {
   const def = JOKER_INDEX[jokerId];
   if (!def) return null;
@@ -93,9 +103,17 @@ function evalJoker(jokerId, ctx) {
     }
   }
 
+  let handDelta = bestHand - baseHand;
+  let archDelta = bestArch - baseArch;
+  const meta = JOKER_META_HEURISTIC[jokerId];
+  if (meta && handDelta === 0 && archDelta === 0) {
+    const ref = Math.max(baseHand, baseArch, 100);
+    archDelta = ref * meta;
+  }
+
   return {
-    handDelta: bestHand - baseHand,
-    archDelta: bestArch - baseArch,
+    handDelta,
+    archDelta,
     replacedIdx,
     replacedName,
     def,
