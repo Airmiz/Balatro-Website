@@ -486,5 +486,125 @@
     "cost": 20,
     "effect": "At end of shop, creates a Negative copy of one consumable.",
     "trigger": { "when": "shop_end", "effects": [{ "type": "copy_consumable_negative" }] }
+  },
+  {
+    "id": "eight_ball",
+    "name": "8 Ball",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "1 in 4 chance for each played 8 to create a Tarot card when scored (must have room).",
+    "trigger": { "when": "on_scored", "condition": { "rank": ["8"] }, "effects": [{ "type": "expected_money", "value": 0.6 }] }
+  },
+  {
+    "id": "misprint",
+    "name": "Misprint",
+    "rarity": "common",
+    "cost": 4,
+    "effect": "+0–23 Mult (random each scoring).",
+    "trigger": { "when": "independent", "effects": [{ "type": "add_mult", "value": 11 }] }
+  },
+  {
+    "id": "gros_michel",
+    "name": "Gros Michel",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "+15 Mult. 1 in 6 chance to be destroyed at end of round.",
+    "trigger": { "when": "independent", "effects": [{ "type": "add_mult", "value": 15 }] }
+  },
+  {
+    "id": "cavendish",
+    "name": "Cavendish",
+    "rarity": "common",
+    "cost": 4,
+    "effect": "X3 Mult. 1 in 1000 chance to be destroyed at end of round.",
+    "trigger": { "when": "independent", "effects": [{ "type": "x_mult", "value": 3 }] }
+  },
+  {
+    "id": "acrobat",
+    "name": "Acrobat",
+    "rarity": "uncommon",
+    "cost": 6,
+    "effect": "X3 Mult on final hand of round.",
+    "trigger": { "when": "on_hand_played", "condition": { "lastHandOfRound": true }, "effects": [{ "type": "x_mult", "value": 3 }] }
+  },
+  {
+    "id": "mystic_summit",
+    "name": "Mystic Summit",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "+15 Mult when 0 discards remaining.",
+    "trigger": { "when": "on_hand_played", "condition": { "noDiscardsLeft": true }, "effects": [{ "type": "add_mult", "value": 15 }] }
+  },
+  {
+    "id": "stuntman",
+    "name": "Stuntman",
+    "rarity": "rare",
+    "cost": 7,
+    "effect": "+250 Chips. -2 hand size.",
+    "trigger": { "when": "independent", "effects": [{ "type": "add_chips", "value": 250 }] }
+  },
+  {
+    "id": "bull",
+    "name": "Bull",
+    "rarity": "uncommon",
+    "cost": 6,
+    "effect": "+2 Chips per dollar held.",
+    "trigger": { "when": "on_hand_played", "effects": [{ "type": "add_chips_per_money", "value": 2 }] }
+  },
+  {
+    "id": "bootstraps",
+    "name": "Bootstraps",
+    "rarity": "uncommon",
+    "cost": 7,
+    "effect": "+2 Mult per $5 held.",
+    "trigger": { "when": "on_hand_played", "effects": [{ "type": "add_mult_per_money", "value": 0.4 }] }
+  },
+  {
+    "id": "loyalty_card",
+    "name": "Loyalty Card",
+    "rarity": "uncommon",
+    "cost": 5,
+    "effect": "X4 Mult every 6 hands played.",
+    "trigger": { "when": "on_hand_played", "effects": [{ "type": "x_mult", "value": 1.5 }] }
+  },
+  {
+    "id": "ceremonial_dagger",
+    "name": "Ceremonial Dagger",
+    "rarity": "uncommon",
+    "cost": 6,
+    "effect": "Sells joker to right at start of blind, gains 2x its sell value as Mult (scaler).",
+    "trigger": { "when": "on_hand_played", "effects": [{ "type": "add_mult_counter", "id": "ceremonial_dagger" }] }
+  },
+  {
+    "id": "constellation",
+    "name": "Constellation",
+    "rarity": "uncommon",
+    "cost": 6,
+    "effect": "Gains X0.1 Mult each time a Planet card is used (scaler).",
+    "trigger": { "when": "on_hand_played", "effects": [{ "type": "x_mult_counter", "id": "constellation", "value": 0.1 }] }
+  },
+  {
+    "id": "green_joker",
+    "name": "Green Joker",
+    "rarity": "common",
+    "cost": 4,
+    "effect": "+1 Mult per hand played, -1 Mult per discard.",
+    "trigger": { "when": "on_hand_played", "effects": [{ "type": "add_mult_counter", "id": "green_joker" }] }
+  },
+  {
+    "id": "square_joker",
+    "name": "Square Joker",
+    "rarity": "common",
+    "cost": 4,
+    "effect": "Gains +4 Chips when played hand has exactly 4 cards (scaler).",
+    "trigger": { "when": "on_hand_played", "condition": { "exactCards": 4 }, "effects": [{ "type": "add_chips_counter", "id": "square_joker" }] }
+  },
+  {
+    "id": "hiker",
+    "name": "Hiker",
+    "rarity": "uncommon",
+    "cost": 5,
+    "effect": "Each scored card permanently gains +5 Chips when scored.",
+    "trigger": { "when": "on_scored", "effects": [{ "type": "add_chips", "value": 5 }] }
   }
 ]

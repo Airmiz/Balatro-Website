@@ -85,6 +85,9 @@ function handMatchesCondition(cond, ctx) {
   if (cond.containsHand && !containsHand(ctx.handType, cond.containsHand)) return false;
   if (cond.maxCards != null && ctx.playedCount > cond.maxCards) return false;
   if (cond.minCards != null && ctx.playedCount < cond.minCards) return false;
+  if (cond.exactCards != null && ctx.playedCount !== cond.exactCards) return false;
+  if (cond.lastHandOfRound && ctx.handsLeft !== 1) return false;
+  if (cond.noDiscardsLeft && ctx.remainingDiscards !== 0) return false;
   return true;
 }
 
@@ -315,6 +318,14 @@ export function simulatePlay({ handCards, playedIdx, jokers, handLevels, planets
           const v = eff.value * handCtx.remainingDiscards;
           chips += v;
           breakdown.push({ label, chips: v, mult: 0 });
+        } else if (eff.type === 'add_chips_per_money') {
+          const v = eff.value * Math.max(0, runState?.money || 0);
+          chips += v;
+          breakdown.push({ label, chips: v, mult: 0 });
+        } else if (eff.type === 'add_mult_per_money') {
+          const v = eff.value * Math.max(0, runState?.money || 0);
+          mult += v;
+          breakdown.push({ label, chips: 0, mult: v });
         } else if (eff.type === 'add_mult_per_hand_played') {
           const v = (eff.value || 1) * handCtx.timesHandPlayed;
           mult += v;
