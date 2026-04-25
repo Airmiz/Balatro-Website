@@ -1,0 +1,490 @@
+[
+  {
+    "id": "joker",
+    "name": "Joker",
+    "rarity": "common",
+    "cost": 2,
+    "effect": "+4 Mult.",
+    "trigger": { "when": "independent", "effects": [{ "type": "add_mult", "value": 4 }] }
+  },
+  {
+    "id": "greedy_joker",
+    "name": "Greedy Joker",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "Diamond cards give +3 Mult when scored.",
+    "trigger": { "when": "on_scored", "condition": { "suit": ["diamonds"] }, "effects": [{ "type": "add_mult", "value": 3 }] }
+  },
+  {
+    "id": "lusty_joker",
+    "name": "Lusty Joker",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "Heart cards give +3 Mult when scored.",
+    "trigger": { "when": "on_scored", "condition": { "suit": ["hearts"] }, "effects": [{ "type": "add_mult", "value": 3 }] }
+  },
+  {
+    "id": "wrathful_joker",
+    "name": "Wrathful Joker",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "Spade cards give +3 Mult when scored.",
+    "trigger": { "when": "on_scored", "condition": { "suit": ["spades"] }, "effects": [{ "type": "add_mult", "value": 3 }] }
+  },
+  {
+    "id": "gluttonous_joker",
+    "name": "Gluttonous Joker",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "Club cards give +3 Mult when scored.",
+    "trigger": { "when": "on_scored", "condition": { "suit": ["clubs"] }, "effects": [{ "type": "add_mult", "value": 3 }] }
+  },
+  {
+    "id": "jolly_joker",
+    "name": "Jolly Joker",
+    "rarity": "common",
+    "cost": 3,
+    "effect": "+8 Mult if played hand contains a Pair.",
+    "trigger": { "when": "on_hand_played", "condition": { "containsHand": "pair" }, "effects": [{ "type": "add_mult", "value": 8 }] }
+  },
+  {
+    "id": "zany_joker",
+    "name": "Zany Joker",
+    "rarity": "common",
+    "cost": 4,
+    "effect": "+12 Mult if played hand contains Three of a Kind.",
+    "trigger": { "when": "on_hand_played", "condition": { "containsHand": "three_of_a_kind" }, "effects": [{ "type": "add_mult", "value": 12 }] }
+  },
+  {
+    "id": "mad_joker",
+    "name": "Mad Joker",
+    "rarity": "common",
+    "cost": 4,
+    "effect": "+10 Mult if played hand contains Two Pair.",
+    "trigger": { "when": "on_hand_played", "condition": { "containsHand": "two_pair" }, "effects": [{ "type": "add_mult", "value": 10 }] }
+  },
+  {
+    "id": "crazy_joker",
+    "name": "Crazy Joker",
+    "rarity": "common",
+    "cost": 4,
+    "effect": "+12 Mult if played hand contains a Straight.",
+    "trigger": { "when": "on_hand_played", "condition": { "containsHand": "straight" }, "effects": [{ "type": "add_mult", "value": 12 }] }
+  },
+  {
+    "id": "droll_joker",
+    "name": "Droll Joker",
+    "rarity": "common",
+    "cost": 4,
+    "effect": "+10 Mult if played hand contains a Flush.",
+    "trigger": { "when": "on_hand_played", "condition": { "containsHand": "flush" }, "effects": [{ "type": "add_mult", "value": 10 }] }
+  },
+  {
+    "id": "sly_joker",
+    "name": "Sly Joker",
+    "rarity": "common",
+    "cost": 3,
+    "effect": "+50 Chips if played hand contains a Pair.",
+    "trigger": { "when": "on_hand_played", "condition": { "containsHand": "pair" }, "effects": [{ "type": "add_chips", "value": 50 }] }
+  },
+  {
+    "id": "wily_joker",
+    "name": "Wily Joker",
+    "rarity": "common",
+    "cost": 4,
+    "effect": "+100 Chips if played hand contains Three of a Kind.",
+    "trigger": { "when": "on_hand_played", "condition": { "containsHand": "three_of_a_kind" }, "effects": [{ "type": "add_chips", "value": 100 }] }
+  },
+  {
+    "id": "clever_joker",
+    "name": "Clever Joker",
+    "rarity": "common",
+    "cost": 4,
+    "effect": "+80 Chips if played hand contains Two Pair.",
+    "trigger": { "when": "on_hand_played", "condition": { "containsHand": "two_pair" }, "effects": [{ "type": "add_chips", "value": 80 }] }
+  },
+  {
+    "id": "devious_joker",
+    "name": "Devious Joker",
+    "rarity": "common",
+    "cost": 4,
+    "effect": "+100 Chips if played hand contains a Straight.",
+    "trigger": { "when": "on_hand_played", "condition": { "containsHand": "straight" }, "effects": [{ "type": "add_chips", "value": 100 }] }
+  },
+  {
+    "id": "crafty_joker",
+    "name": "Crafty Joker",
+    "rarity": "common",
+    "cost": 4,
+    "effect": "+80 Chips if played hand contains a Flush.",
+    "trigger": { "when": "on_hand_played", "condition": { "containsHand": "flush" }, "effects": [{ "type": "add_chips", "value": 80 }] }
+  },
+  {
+    "id": "half_joker",
+    "name": "Half Joker",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "+20 Mult if played hand contains 3 or fewer cards.",
+    "trigger": { "when": "on_hand_played", "condition": { "maxCards": 3 }, "effects": [{ "type": "add_mult", "value": 20 }] }
+  },
+  {
+    "id": "banner",
+    "name": "Banner",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "+30 Chips per remaining discard.",
+    "trigger": { "when": "on_hand_played", "effects": [{ "type": "add_chips_per", "per": "remaining_discards", "value": 30 }] }
+  },
+  {
+    "id": "fibonacci",
+    "name": "Fibonacci",
+    "rarity": "uncommon",
+    "cost": 8,
+    "effect": "Each played A, 2, 3, 5, 8 gives +8 Mult when scored.",
+    "trigger": { "when": "on_scored", "condition": { "rank": ["A","2","3","5","8"] }, "effects": [{ "type": "add_mult", "value": 8 }] }
+  },
+  {
+    "id": "scary_face",
+    "name": "Scary Face",
+    "rarity": "common",
+    "cost": 4,
+    "effect": "Face cards give +30 Chips when scored.",
+    "trigger": { "when": "on_scored", "condition": { "face": true }, "effects": [{ "type": "add_chips", "value": 30 }] }
+  },
+  {
+    "id": "even_steven",
+    "name": "Even Steven",
+    "rarity": "common",
+    "cost": 4,
+    "effect": "Even-ranked played cards give +4 Mult when scored.",
+    "trigger": { "when": "on_scored", "condition": { "even": true }, "effects": [{ "type": "add_mult", "value": 4 }] }
+  },
+  {
+    "id": "odd_todd",
+    "name": "Odd Todd",
+    "rarity": "common",
+    "cost": 4,
+    "effect": "Odd-ranked played cards give +31 Chips when scored (A counts as odd).",
+    "trigger": { "when": "on_scored", "condition": { "odd": true }, "effects": [{ "type": "add_chips", "value": 31 }] }
+  },
+  {
+    "id": "scholar",
+    "name": "Scholar",
+    "rarity": "common",
+    "cost": 4,
+    "effect": "Played Aces give +20 Chips and +4 Mult when scored.",
+    "trigger": { "when": "on_scored", "condition": { "rank": ["A"] }, "effects": [{ "type": "add_chips", "value": 20 }, { "type": "add_mult", "value": 4 }] }
+  },
+  {
+    "id": "business_card",
+    "name": "Business Card",
+    "rarity": "common",
+    "cost": 4,
+    "effect": "Played face cards have a 1 in 2 chance to give $2 when scored.",
+    "trigger": { "when": "on_scored", "condition": { "face": true }, "effects": [{ "type": "expected_money", "value": 1 }] }
+  },
+  {
+    "id": "supernova",
+    "name": "Supernova",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "Adds times played of this hand to Mult.",
+    "trigger": { "when": "on_hand_played", "effects": [{ "type": "add_mult_per_hand_played", "value": 1 }] }
+  },
+  {
+    "id": "ride_the_bus",
+    "name": "Ride the Bus",
+    "rarity": "common",
+    "cost": 6,
+    "effect": "+1 Mult per consecutive hand without face card. Resets on face card.",
+    "trigger": { "when": "independent", "effects": [{ "type": "add_mult_counter", "id": "ride_the_bus" }] }
+  },
+  {
+    "id": "runner",
+    "name": "Runner",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "Gains +15 Chips when a Straight is played. (Scaler)",
+    "trigger": { "when": "on_hand_played", "condition": { "containsHand": "straight" }, "effects": [{ "type": "add_chips_counter", "id": "runner" }] }
+  },
+  {
+    "id": "ice_cream",
+    "name": "Ice Cream",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "+100 Chips. -5 Chips per hand played.",
+    "trigger": { "when": "on_hand_played", "effects": [{ "type": "add_chips_scaling", "value": 100, "decayPerHand": 5 }] }
+  },
+  {
+    "id": "blue_joker",
+    "name": "Blue Joker",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "+2 Chips per remaining card in deck.",
+    "trigger": { "when": "on_hand_played", "effects": [{ "type": "add_chips_per_deck_remaining", "value": 2 }] }
+  },
+  {
+    "id": "bloodstone",
+    "name": "Bloodstone",
+    "rarity": "uncommon",
+    "cost": 7,
+    "effect": "1 in 2 chance for Hearts to give X1.5 Mult when scored.",
+    "trigger": { "when": "on_scored", "condition": { "suit": ["hearts"] }, "effects": [{ "type": "x_mult", "value": 1.25, "probability": 0.5 }] }
+  },
+  {
+    "id": "arrowhead",
+    "name": "Arrowhead",
+    "rarity": "uncommon",
+    "cost": 7,
+    "effect": "Spade cards give +50 Chips when scored.",
+    "trigger": { "when": "on_scored", "condition": { "suit": ["spades"] }, "effects": [{ "type": "add_chips", "value": 50 }] }
+  },
+  {
+    "id": "onyx_agate",
+    "name": "Onyx Agate",
+    "rarity": "uncommon",
+    "cost": 7,
+    "effect": "Club cards give +7 Mult when scored.",
+    "trigger": { "when": "on_scored", "condition": { "suit": ["clubs"] }, "effects": [{ "type": "add_mult", "value": 7 }] }
+  },
+  {
+    "id": "rough_gem",
+    "name": "Rough Gem",
+    "rarity": "uncommon",
+    "cost": 7,
+    "effect": "Diamond cards give $1 when scored.",
+    "trigger": { "when": "on_scored", "condition": { "suit": ["diamonds"] }, "effects": [{ "type": "add_money", "value": 1 }] }
+  },
+  {
+    "id": "baron",
+    "name": "Baron",
+    "rarity": "rare",
+    "cost": 8,
+    "effect": "Each King held in hand gives X1.5 Mult.",
+    "trigger": { "when": "on_held_in_hand", "condition": { "rank": ["K"] }, "effects": [{ "type": "x_mult", "value": 1.5 }] }
+  },
+  {
+    "id": "shoot_the_moon",
+    "name": "Shoot the Moon",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "Each Queen held in hand gives +13 Mult.",
+    "trigger": { "when": "on_held_in_hand", "condition": { "rank": ["Q"] }, "effects": [{ "type": "add_mult", "value": 13 }] }
+  },
+  {
+    "id": "raised_fist",
+    "name": "Raised Fist",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "Adds double the rank of lowest card held in hand to Mult.",
+    "trigger": { "when": "on_held_in_hand", "effects": [{ "type": "add_mult_from_lowest_held", "value": 2 }] }
+  },
+  {
+    "id": "mime",
+    "name": "Mime",
+    "rarity": "uncommon",
+    "cost": 5,
+    "effect": "Retrigger all card held in hand abilities.",
+    "trigger": { "when": "on_held_in_hand", "effects": [{ "type": "retrigger_held", "value": 1 }] }
+  },
+  {
+    "id": "dusk",
+    "name": "Dusk",
+    "rarity": "uncommon",
+    "cost": 5,
+    "effect": "Retrigger all played cards in final hand of the round.",
+    "trigger": { "when": "on_scored", "effects": [{ "type": "retrigger_scored_last_hand", "value": 1 }] }
+  },
+  {
+    "id": "sock_and_buskin",
+    "name": "Sock and Buskin",
+    "rarity": "uncommon",
+    "cost": 6,
+    "effect": "Retrigger all played face cards.",
+    "trigger": { "when": "on_scored", "condition": { "face": true }, "effects": [{ "type": "retrigger_scored", "value": 1 }] }
+  },
+  {
+    "id": "hanging_chad",
+    "name": "Hanging Chad",
+    "rarity": "common",
+    "cost": 4,
+    "effect": "Retrigger first played card 2 additional times.",
+    "trigger": { "when": "on_scored", "condition": { "firstScored": true }, "effects": [{ "type": "retrigger_scored", "value": 2 }] }
+  },
+  {
+    "id": "steel_joker",
+    "name": "Steel Joker",
+    "rarity": "uncommon",
+    "cost": 7,
+    "effect": "X0.2 Mult per Steel card in full deck.",
+    "trigger": { "when": "on_hand_played", "effects": [{ "type": "x_mult_per_deck_enhancement", "enhancement": "steel", "value": 0.2 }] }
+  },
+  {
+    "id": "stone_joker",
+    "name": "Stone Joker",
+    "rarity": "uncommon",
+    "cost": 6,
+    "effect": "+25 Chips per Stone card in full deck.",
+    "trigger": { "when": "on_hand_played", "effects": [{ "type": "add_chips_per_deck_enhancement", "enhancement": "stone", "value": 25 }] }
+  },
+  {
+    "id": "photograph",
+    "name": "Photograph",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "First played face card gives X2 Mult when scored.",
+    "trigger": { "when": "on_scored", "condition": { "face": true, "firstFace": true }, "effects": [{ "type": "x_mult", "value": 2 }] }
+  },
+  {
+    "id": "the_duo",
+    "name": "The Duo",
+    "rarity": "rare",
+    "cost": 8,
+    "effect": "X2 Mult if played hand contains a Pair.",
+    "trigger": { "when": "on_hand_played", "condition": { "containsHand": "pair" }, "effects": [{ "type": "x_mult", "value": 2 }] }
+  },
+  {
+    "id": "the_trio",
+    "name": "The Trio",
+    "rarity": "rare",
+    "cost": 8,
+    "effect": "X3 Mult if played hand contains Three of a Kind.",
+    "trigger": { "when": "on_hand_played", "condition": { "containsHand": "three_of_a_kind" }, "effects": [{ "type": "x_mult", "value": 3 }] }
+  },
+  {
+    "id": "the_family",
+    "name": "The Family",
+    "rarity": "rare",
+    "cost": 8,
+    "effect": "X4 Mult if played hand contains Four of a Kind.",
+    "trigger": { "when": "on_hand_played", "condition": { "containsHand": "four_of_a_kind" }, "effects": [{ "type": "x_mult", "value": 4 }] }
+  },
+  {
+    "id": "the_order",
+    "name": "The Order",
+    "rarity": "rare",
+    "cost": 8,
+    "effect": "X3 Mult if played hand contains a Straight.",
+    "trigger": { "when": "on_hand_played", "condition": { "containsHand": "straight" }, "effects": [{ "type": "x_mult", "value": 3 }] }
+  },
+  {
+    "id": "the_tribe",
+    "name": "The Tribe",
+    "rarity": "rare",
+    "cost": 8,
+    "effect": "X2 Mult if played hand contains a Flush.",
+    "trigger": { "when": "on_hand_played", "condition": { "containsHand": "flush" }, "effects": [{ "type": "x_mult", "value": 2 }] }
+  },
+  {
+    "id": "smeared_joker",
+    "name": "Smeared Joker",
+    "rarity": "uncommon",
+    "cost": 7,
+    "effect": "Hearts & Diamonds count as same suit. Spades & Clubs count as same suit.",
+    "trigger": { "when": "passive", "effects": [{ "type": "suit_merge" }] }
+  },
+  {
+    "id": "pareidolia",
+    "name": "Pareidolia",
+    "rarity": "uncommon",
+    "cost": 5,
+    "effect": "All cards count as face cards.",
+    "trigger": { "when": "passive", "effects": [{ "type": "all_face" }] }
+  },
+  {
+    "id": "blueprint",
+    "name": "Blueprint",
+    "rarity": "rare",
+    "cost": 10,
+    "effect": "Copies ability of Joker to the right.",
+    "trigger": { "when": "passive", "effects": [{ "type": "copy_right" }] }
+  },
+  {
+    "id": "brainstorm",
+    "name": "Brainstorm",
+    "rarity": "rare",
+    "cost": 10,
+    "effect": "Copies ability of leftmost Joker.",
+    "trigger": { "when": "passive", "effects": [{ "type": "copy_leftmost" }] }
+  },
+  {
+    "id": "hack",
+    "name": "Hack",
+    "rarity": "uncommon",
+    "cost": 6,
+    "effect": "Retrigger each played 2, 3, 4, 5.",
+    "trigger": { "when": "on_scored", "condition": { "rank": ["2","3","4","5"] }, "effects": [{ "type": "retrigger_scored", "value": 1 }] }
+  },
+  {
+    "id": "seltzer",
+    "name": "Seltzer",
+    "rarity": "uncommon",
+    "cost": 6,
+    "effect": "Retrigger all cards played for the next 10 hands.",
+    "trigger": { "when": "on_scored", "effects": [{ "type": "retrigger_scored", "value": 1 }] }
+  },
+  {
+    "id": "smiley_face",
+    "name": "Smiley Face",
+    "rarity": "common",
+    "cost": 4,
+    "effect": "Face cards give +5 Mult when scored.",
+    "trigger": { "when": "on_scored", "condition": { "face": true }, "effects": [{ "type": "add_mult", "value": 5 }] }
+  },
+  {
+    "id": "walkie_talkie",
+    "name": "Walkie Talkie",
+    "rarity": "common",
+    "cost": 4,
+    "effect": "Each played 10 or 4 gives +10 Chips and +4 Mult.",
+    "trigger": { "when": "on_scored", "condition": { "rank": ["10","4"] }, "effects": [{ "type": "add_chips", "value": 10 }, { "type": "add_mult", "value": 4 }] }
+  },
+  {
+    "id": "the_idol",
+    "name": "The Idol",
+    "rarity": "uncommon",
+    "cost": 6,
+    "effect": "Each scored [rank] of [suit] gives X2 Mult. Changes each round.",
+    "trigger": { "when": "on_scored", "condition": { "dynamicCard": true }, "effects": [{ "type": "x_mult", "value": 2 }] }
+  },
+  {
+    "id": "triboulet",
+    "name": "Triboulet",
+    "rarity": "legendary",
+    "cost": 20,
+    "effect": "Played Kings and Queens each give X2 Mult when scored.",
+    "trigger": { "when": "on_scored", "condition": { "rank": ["K","Q"] }, "effects": [{ "type": "x_mult", "value": 2 }] }
+  },
+  {
+    "id": "yorick",
+    "name": "Yorick",
+    "rarity": "legendary",
+    "cost": 20,
+    "effect": "X5 Mult after 23 cards discarded (scaler).",
+    "trigger": { "when": "on_hand_played", "effects": [{ "type": "x_mult_counter", "id": "yorick", "value": 5 }] }
+  },
+  {
+    "id": "canio",
+    "name": "Canio",
+    "rarity": "legendary",
+    "cost": 20,
+    "effect": "X1 Mult. Gains X1 Mult when a face card is destroyed.",
+    "trigger": { "when": "passive", "effects": [{ "type": "x_mult_counter", "id": "canio", "value": 1 }] }
+  },
+  {
+    "id": "chicot",
+    "name": "Chicot",
+    "rarity": "legendary",
+    "cost": 20,
+    "effect": "Disables effect of every boss blind.",
+    "trigger": { "when": "passive", "effects": [{ "type": "boss_immunity" }] }
+  },
+  {
+    "id": "perkeo",
+    "name": "Perkeo",
+    "rarity": "legendary",
+    "cost": 20,
+    "effect": "At end of shop, creates a Negative copy of one consumable.",
+    "trigger": { "when": "shop_end", "effects": [{ "type": "copy_consumable_negative" }] }
+  }
+]

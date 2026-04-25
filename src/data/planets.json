@@ -1,0 +1,14 @@
+[
+  { "id": "pluto",     "hand": "high_card",      "chipsPerLevel": 10, "multPerLevel": 1, "cost": 3 },
+  { "id": "mercury",   "hand": "pair",           "chipsPerLevel": 15, "multPerLevel": 1, "cost": 3 },
+  { "id": "uranus",    "hand": "two_pair",       "chipsPerLevel": 20, "multPerLevel": 1, "cost": 3 },
+  { "id": "venus",     "hand": "three_of_a_kind","chipsPerLevel": 20, "multPerLevel": 2, "cost": 3 },
+  { "id": "saturn",    "hand": "straight",       "chipsPerLevel": 30, "multPerLevel": 3, "cost": 3 },
+  { "id": "jupiter",   "hand": "flush",          "chipsPerLevel": 15, "multPerLevel": 2, "cost": 3 },
+  { "id": "earth",     "hand": "full_house",     "chipsPerLevel": 25, "multPerLevel": 2, "cost": 3 },
+  { "id": "mars",      "hand": "four_of_a_kind", "chipsPerLevel": 30, "multPerLevel": 3, "cost": 3 },
+  { "id": "neptune",   "hand": "straight_flush", "chipsPerLevel": 40, "multPerLevel": 4, "cost": 3 },
+  { "id": "planet_x",  "hand": "five_of_a_kind", "chipsPerLevel": 35, "multPerLevel": 3, "cost": 3 },
+  { "id": "ceres",     "hand": "flush_house",    "chipsPerLevel": 40, "multPerLevel": 4, "cost": 3 },
+  { "id": "eris",      "hand": "flush_five",     "chipsPerLevel": 50, "multPerLevel": 3, "cost": 3 }
+]
