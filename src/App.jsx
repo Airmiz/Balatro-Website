@@ -341,16 +341,16 @@ export default function App() {
         />
       </BottomSheet>
 
-      <BottomSheet open={sheet === SHEET.shop} onClose={() => setSheet(SHEET.none)} title="Shop · which joker to buy" fullHeight>
+      <BottomSheet open={sheet === SHEET.shop} onClose={() => setSheet(SHEET.none)} title="Shop · what to buy" fullHeight>
         <ShopPicker
           candidates={shopCandidates}
-          onAdd={(id) => {
-            const def = jokersData.find((j) => j.id === id);
-            if (!def) return;
-            setShopCandidates((c) => [...c, { id, cost: def.cost ?? 5 }]);
+          onAdd={(type, id, cost) => {
+            setShopCandidates((c) => [...c, { type, id, cost: cost ?? 5 }]);
           }}
-          onRemove={(id) => setShopCandidates((c) => c.filter((x) => x.id !== id))}
-          onCostChange={(id, cost) => setShopCandidates((c) => c.map((x) => (x.id === id ? { ...x, cost } : x)))}
+          onRemove={(type, id) => setShopCandidates((c) => c.filter((x) => !(x.type === type && x.id === id)))}
+          onCostChange={(type, id, cost) =>
+            setShopCandidates((c) => c.map((x) => (x.type === type && x.id === id ? { ...x, cost } : x)))
+          }
           ctx={{
             currentJokers: state.jokers,
             hand: state.hand,

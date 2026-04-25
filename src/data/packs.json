@@ -1,0 +1,17 @@
+[
+  { "id": "buffoon_normal",   "name": "Buffoon Pack",        "kind": "joker",    "show": 2, "pick": 1, "cost": 4 },
+  { "id": "buffoon_jumbo",    "name": "Jumbo Buffoon Pack",  "kind": "joker",    "show": 4, "pick": 1, "cost": 6 },
+  { "id": "buffoon_mega",     "name": "Mega Buffoon Pack",   "kind": "joker",    "show": 4, "pick": 2, "cost": 8 },
+  { "id": "celestial_normal", "name": "Celestial Pack",      "kind": "planet",   "show": 2, "pick": 1, "cost": 4 },
+  { "id": "celestial_jumbo",  "name": "Jumbo Celestial Pack","kind": "planet",   "show": 4, "pick": 1, "cost": 6 },
+  { "id": "celestial_mega",   "name": "Mega Celestial Pack", "kind": "planet",   "show": 4, "pick": 2, "cost": 8 },
+  { "id": "arcana_normal",    "name": "Arcana Pack",         "kind": "tarot",    "show": 2, "pick": 1, "cost": 4 },
+  { "id": "arcana_jumbo",     "name": "Jumbo Arcana Pack",   "kind": "tarot",    "show": 4, "pick": 1, "cost": 6 },
+  { "id": "arcana_mega",      "name": "Mega Arcana Pack",    "kind": "tarot",    "show": 4, "pick": 2, "cost": 8 },
+  { "id": "spectral_normal",  "name": "Spectral Pack",       "kind": "spectral", "show": 2, "pick": 1, "cost": 4 },
+  { "id": "spectral_jumbo",   "name": "Jumbo Spectral Pack", "kind": "spectral", "show": 4, "pick": 1, "cost": 6 },
+  { "id": "spectral_mega",    "name": "Mega Spectral Pack",  "kind": "spectral", "show": 4, "pick": 2, "cost": 8 },
+  { "id": "standard_normal",  "name": "Standard Pack",       "kind": "card",     "show": 3, "pick": 1, "cost": 4 },
+  { "id": "standard_jumbo",   "name": "Jumbo Standard Pack", "kind": "card",     "show": 5, "pick": 1, "cost": 6 },
+  { "id": "standard_mega",    "name": "Mega Standard Pack",  "kind": "card",     "show": 5, "pick": 2, "cost": 8 }
+]
