@@ -5,18 +5,20 @@ import CardPicker from './components/CardPicker.jsx';
 import JokerPicker from './components/JokerPicker.jsx';
 import RunStateEditor from './components/RunStateEditor.jsx';
 import RecommendationCard from './components/RecommendationCard.jsx';
+import ShopPicker from './components/ShopPicker.jsx';
 import { loadState, saveState, clearState, defaultState } from './state/runState.js';
 import { recommend } from './engine/recommend.js';
 import jokersData from './data/jokers.json';
 import planetsData from './data/planets.json';
 import bossesData from './data/bosses.json';
 
-const SHEET = { none: null, card: 'card', joker: 'joker', run: 'run' };
+const SHEET = { none: null, card: 'card', joker: 'joker', run: 'run', shop: 'shop' };
 
 export default function App() {
   const [state, setState] = useState(() => loadState());
   const [sheet, setSheet] = useState(SHEET.none);
   const [selectedIdx, setSelectedIdx] = useState([]);
+  const [shopCandidates, setShopCandidates] = useState([]);
 
   useEffect(() => {
     saveState(state);
@@ -176,13 +178,22 @@ export default function App() {
         <section>
           <div className="flex items-center justify-between mb-2">
             <h2 className="text-xs font-bold uppercase tracking-wider text-white/60">Jokers ({state.jokers.length})</h2>
-            <button
-              type="button"
-              onClick={() => setSheet(SHEET.joker)}
-              className="tap text-xs font-semibold text-accent-blue min-h-[36px] px-2"
-            >
-              Manage
-            </button>
+            <div className="flex items-center gap-1">
+              <button
+                type="button"
+                onClick={() => setSheet(SHEET.shop)}
+                className="tap text-xs font-semibold text-accent-gold min-h-[36px] px-2"
+              >
+                Shop
+              </button>
+              <button
+                type="button"
+                onClick={() => setSheet(SHEET.joker)}
+                className="tap text-xs font-semibold text-accent-blue min-h-[36px] px-2"
+              >
+                Manage
+              </button>
+            </div>
           </div>
           <div className="flex gap-1.5 overflow-x-auto pb-1 -mx-1 px-1">
             {state.jokers.length === 0 && (
@@ -327,6 +338,28 @@ export default function App() {
           handLevels={state.handLevels}
           onRunChange={(run) => setState((s) => ({ ...s, run }))}
           onHandLevelsChange={(handLevels) => setState((s) => ({ ...s, handLevels }))}
+        />
+      </BottomSheet>
+
+      <BottomSheet open={sheet === SHEET.shop} onClose={() => setSheet(SHEET.none)} title="Shop · which joker to buy" fullHeight>
+        <ShopPicker
+          candidates={shopCandidates}
+          onAdd={(id) => {
+            const def = jokersData.find((j) => j.id === id);
+            if (!def) return;
+            setShopCandidates((c) => [...c, { id, cost: def.cost ?? 5 }]);
+          }}
+          onRemove={(id) => setShopCandidates((c) => c.filter((x) => x.id !== id))}
+          onCostChange={(id, cost) => setShopCandidates((c) => c.map((x) => (x.id === id ? { ...x, cost } : x)))}
+          ctx={{
+            currentJokers: state.jokers,
+            hand: state.hand,
+            handLevels: state.handLevels,
+            planets: planetsData,
+            runState: state.run,
+            boss,
+            money: state.run.money,
+          }}
         />
       </BottomSheet>
     </div>
