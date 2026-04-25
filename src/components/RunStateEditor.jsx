@@ -93,27 +93,57 @@ export default function RunStateEditor({ run, handLevels, onRunChange, onHandLev
       </div>
 
       <div>
-        <div className="text-xs uppercase tracking-wide text-white/60 mb-2">Hand levels</div>
-        <div className="grid grid-cols-2 gap-1.5">
+        <div className="text-xs uppercase tracking-wide text-white/60 mb-2">Hand levels & times played</div>
+        <div className="grid grid-cols-[1fr_auto_auto] gap-x-2 gap-y-1 items-center bg-ink-700 rounded-lg p-2">
+          <div className="text-[10px] uppercase tracking-wide text-white/40">Hand</div>
+          <div className="text-[10px] uppercase tracking-wide text-white/40 text-center">Lvl</div>
+          <div className="text-[10px] uppercase tracking-wide text-white/40 text-center">#</div>
           {HAND_TYPES.map((h) => (
-            <div key={h} className="flex items-center justify-between gap-1 bg-ink-700 rounded-lg p-1.5">
-              <div className="text-xs font-semibold text-white/80 flex-1 truncate">{HAND_LABEL[h]}</div>
-              <button
-                type="button"
-                onClick={() => onHandLevelsChange({ ...handLevels, [h]: Math.max(1, (handLevels[h] || 1) - 1) })}
-                className="tap min-w-[32px] min-h-[32px] rounded bg-ink-600 font-bold"
-              >
-                −
-              </button>
-              <span className="min-w-[24px] text-center text-sm font-bold">{handLevels[h] || 1}</span>
-              <button
-                type="button"
-                onClick={() => onHandLevelsChange({ ...handLevels, [h]: (handLevels[h] || 1) + 1 })}
-                className="tap min-w-[32px] min-h-[32px] rounded bg-ink-600 font-bold"
-              >
-                +
-              </button>
-            </div>
+            <React.Fragment key={h}>
+              <div className="text-xs font-semibold text-white/80 truncate">{HAND_LABEL[h]}</div>
+              <div className="flex items-center gap-0.5">
+                <button
+                  type="button"
+                  onClick={() => onHandLevelsChange({ ...handLevels, [h]: Math.max(1, (handLevels[h] || 1) - 1) })}
+                  className="tap min-w-[28px] min-h-[28px] rounded bg-ink-600 text-xs font-bold"
+                >
+                  −
+                </button>
+                <span className="min-w-[22px] text-center text-xs font-bold">{handLevels[h] || 1}</span>
+                <button
+                  type="button"
+                  onClick={() => onHandLevelsChange({ ...handLevels, [h]: (handLevels[h] || 1) + 1 })}
+                  className="tap min-w-[28px] min-h-[28px] rounded bg-ink-600 text-xs font-bold"
+                >
+                  +
+                </button>
+              </div>
+              <div className="flex items-center gap-0.5">
+                <button
+                  type="button"
+                  onClick={() => {
+                    const next = { ...(run.timesHandPlayed || {}) };
+                    next[h] = Math.max(0, (next[h] || 0) - 1);
+                    set({ timesHandPlayed: next });
+                  }}
+                  className="tap min-w-[28px] min-h-[28px] rounded bg-ink-600 text-xs font-bold"
+                >
+                  −
+                </button>
+                <span className="min-w-[22px] text-center text-xs font-bold text-accent-gold">{run.timesHandPlayed?.[h] || 0}</span>
+                <button
+                  type="button"
+                  onClick={() => {
+                    const next = { ...(run.timesHandPlayed || {}) };
+                    next[h] = (next[h] || 0) + 1;
+                    set({ timesHandPlayed: next });
+                  }}
+                  className="tap min-w-[28px] min-h-[28px] rounded bg-ink-600 text-xs font-bold"
+                >
+                  +
+                </button>
+              </div>
+            </React.Fragment>
           ))}
         </div>
       </div>
