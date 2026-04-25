@@ -30,9 +30,14 @@ const ENH_COLOR = {
   lucky: 'bg-accent-green/20 text-accent-green',
 };
 
-export default function Card({ card, selected = false, dimmed = false, onTap, compact = false }) {
+export default function Card({ card, selected = false, dimmed = false, discardHint = false, onTap, compact = false }) {
   const { rank, suit, enhancement } = card;
   const isStone = enhancement === 'stone';
+  const borderClass = selected
+    ? 'border-accent-gold -translate-y-1'
+    : discardHint
+      ? 'border-accent-red ring-1 ring-accent-red/60'
+      : 'border-ink-500';
   return (
     <button
       type="button"
@@ -41,7 +46,7 @@ export default function Card({ card, selected = false, dimmed = false, onTap, co
         'tap relative flex flex-col items-center justify-between',
         'rounded-xl border-2 min-w-[48px] min-h-[72px] px-1 py-1.5',
         compact ? 'min-w-[40px] min-h-[56px]' : '',
-        selected ? 'border-accent-gold -translate-y-1' : 'border-ink-500',
+        borderClass,
         dimmed ? 'opacity-40' : '',
         'bg-ink-700 transition-transform duration-75',
       ].join(' ')}

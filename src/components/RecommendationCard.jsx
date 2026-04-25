@@ -9,7 +9,7 @@ function fmt(n) {
   return Math.round(n).toLocaleString();
 }
 
-export default function RecommendationCard({ recommendation, onPreview, previewedIdx, chipsNeeded, chipsScored, handsLeft }) {
+export default function RecommendationCard({ recommendation, onPreview, onSelectDiscard, previewedIdx, chipsNeeded, chipsScored, handsLeft }) {
   const plays = recommendation?.plays || [];
   const discard = recommendation?.discardSuggestion;
   const best = plays[0];
@@ -66,10 +66,19 @@ export default function RecommendationCard({ recommendation, onPreview, previewe
         })}
 
         {discard && (
-          <div className="rounded-lg bg-accent-red/10 border border-accent-red/40 p-2">
-            <div className="text-xs font-bold uppercase tracking-wider text-accent-red">Discard recommended</div>
+          <button
+            type="button"
+            onClick={() => onSelectDiscard?.(discard.indices)}
+            className="tap w-full text-left rounded-lg bg-accent-red/10 border border-accent-red/40 p-2 active:bg-accent-red/20"
+          >
+            <div className="flex items-center justify-between gap-2">
+              <div className="text-xs font-bold uppercase tracking-wider text-accent-red">
+                Discard {discard.indices.length} card{discard.indices.length === 1 ? '' : 's'}
+              </div>
+              <div className="text-xs font-semibold text-accent-red">Tap to select →</div>
+            </div>
             <div className="text-xs text-white/80 mt-1">{discard.reason}</div>
-          </div>
+          </button>
         )}
       </div>
     </div>

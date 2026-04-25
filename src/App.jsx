@@ -162,6 +162,7 @@ export default function App() {
           <RecommendationCard
             recommendation={recommendation}
             onPreview={(idx) => { setPreviewedIdx(idx); setSelectedIdx([]); }}
+            onSelectDiscard={(idx) => setSelectedIdx(idx.slice(0, 5))}
             previewedIdx={selectedIdx.length ? null : previewedIdx}
             chipsNeeded={state.run.chipsNeeded}
             chipsScored={state.run.chipsScored}
@@ -247,11 +248,16 @@ export default function App() {
               {state.hand.map((card, i) => {
                 const isSelected = selectedIdx.includes(i);
                 const isRecommended = !selectedIdx.length && previewedIdx?.includes(i);
+                const isDiscardHint =
+                  !isSelected &&
+                  !isRecommended &&
+                  recommendation?.discardSuggestion?.indices?.includes(i);
                 return (
                   <div key={card.id} className="relative">
                     <Card
                       card={card}
                       selected={isSelected || isRecommended}
+                      discardHint={isDiscardHint}
                       onTap={() => toggleSelect(i)}
                     />
                     <button
