@@ -68,6 +68,29 @@ describe('classifyHand', () => {
     expect(classifyHand(cards).type).toBe('high_card');
   });
 
+  it('Four Fingers: 4 same-suit cards count as a flush', () => {
+    const cards = [
+      makeCard('A', 'hearts'),
+      makeCard('K', 'hearts'),
+      makeCard('9', 'hearts'),
+      makeCard('5', 'hearts'),
+      makeCard('3', 'spades'),
+    ];
+    expect(classifyHand(cards, { fourfingers: true }).type).toBe('flush');
+    // without fourfingers it should NOT be a flush (mixed suits)
+    expect(classifyHand(cards).type).not.toBe('flush');
+  });
+
+  it('Four Fingers: 4-card straight counts as a straight', () => {
+    const cards = [
+      makeCard('5', 'spades'),
+      makeCard('6', 'hearts'),
+      makeCard('7', 'clubs'),
+      makeCard('8', 'diamonds'),
+    ];
+    expect(classifyHand(cards, { fourfingers: true }).type).toBe('straight');
+  });
+
   it('stone cards do not break a flush', () => {
     const cards = [
       makeCard('2', 'hearts'),

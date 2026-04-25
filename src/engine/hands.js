@@ -59,16 +59,25 @@ function groupByRank(cards) {
 
 function isFlush(cards, opts) {
   const nonStone = cards.filter((c) => c.enhancement !== 'stone');
-  if (nonStone.length < 5) return false;
+  const needed = opts?.fourfingers ? 4 : 5;
+  if (nonStone.length < needed) return false;
   if (nonStone.length > 5) return false;
-  let refSuit = null;
+
+  const suitCounts = {};
+  let wildCount = 0;
   for (const c of nonStone) {
     const s = effectiveSuit(c, opts);
-    if (s === 'wild') continue;
-    if (refSuit === null) refSuit = s;
-    else if (refSuit !== s) return false;
+    if (s === 'wild') {
+      wildCount++;
+      continue;
+    }
+    suitCounts[s] = (suitCounts[s] || 0) + 1;
   }
-  return true;
+  if (wildCount >= needed) return true;
+  for (const count of Object.values(suitCounts)) {
+    if (count + wildCount >= needed) return true;
+  }
+  return false;
 }
 
 function isStraight(cards, { shortcut = false, fourfingers = false } = {}) {

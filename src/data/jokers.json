@@ -614,5 +614,21 @@
     "cost": 5,
     "effect": "Gains +3 Mult when any Booster Pack is skipped (scaler).",
     "trigger": { "when": "independent", "effects": [{ "type": "add_mult_counter", "id": "red_card" }] }
+  },
+  {
+    "id": "four_fingers",
+    "name": "Four Fingers",
+    "rarity": "uncommon",
+    "cost": 7,
+    "effect": "All Flushes and Straights can be made with 4 cards.",
+    "trigger": { "when": "passive", "effects": [{ "type": "fourfingers" }] }
+  },
+  {
+    "id": "shortcut",
+    "name": "Shortcut",
+    "rarity": "uncommon",
+    "cost": 7,
+    "effect": "Allows Straights to be made with gaps of 1 rank (e.g. 10 8 6 5 3).",
+    "trigger": { "when": "passive", "effects": [{ "type": "shortcut" }] }
   }
 ]
