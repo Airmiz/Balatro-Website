@@ -606,5 +606,13 @@
     "cost": 5,
     "effect": "Each scored card permanently gains +5 Chips when scored.",
     "trigger": { "when": "on_scored", "effects": [{ "type": "add_chips", "value": 5 }] }
+  },
+  {
+    "id": "red_card",
+    "name": "Red Card",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "Gains +3 Mult when any Booster Pack is skipped (scaler).",
+    "trigger": { "when": "independent", "effects": [{ "type": "add_mult_counter", "id": "red_card" }] }
   }
 ]
