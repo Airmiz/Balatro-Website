@@ -5,7 +5,15 @@
     "rarity": "common",
     "cost": 2,
     "effect": "+4 Mult.",
-    "trigger": { "when": "independent", "effects": [{ "type": "add_mult", "value": 4 }] }
+    "trigger": {
+      "when": "independent",
+      "effects": [
+        {
+          "type": "add_mult",
+          "value": 4
+        }
+      ]
+    }
   },
   {
     "id": "greedy_joker",
@@ -13,7 +21,20 @@
     "rarity": "common",
     "cost": 5,
     "effect": "Diamond cards give +3 Mult when scored.",
-    "trigger": { "when": "on_scored", "condition": { "suit": ["diamonds"] }, "effects": [{ "type": "add_mult", "value": 3 }] }
+    "trigger": {
+      "when": "on_scored",
+      "condition": {
+        "suit": [
+          "diamonds"
+        ]
+      },
+      "effects": [
+        {
+          "type": "add_mult",
+          "value": 3
+        }
+      ]
+    }
   },
   {
     "id": "lusty_joker",
@@ -21,7 +42,20 @@
     "rarity": "common",
     "cost": 5,
     "effect": "Heart cards give +3 Mult when scored.",
-    "trigger": { "when": "on_scored", "condition": { "suit": ["hearts"] }, "effects": [{ "type": "add_mult", "value": 3 }] }
+    "trigger": {
+      "when": "on_scored",
+      "condition": {
+        "suit": [
+          "hearts"
+        ]
+      },
+      "effects": [
+        {
+          "type": "add_mult",
+          "value": 3
+        }
+      ]
+    }
   },
   {
     "id": "wrathful_joker",
@@ -29,7 +63,20 @@
     "rarity": "common",
     "cost": 5,
     "effect": "Spade cards give +3 Mult when scored.",
-    "trigger": { "when": "on_scored", "condition": { "suit": ["spades"] }, "effects": [{ "type": "add_mult", "value": 3 }] }
+    "trigger": {
+      "when": "on_scored",
+      "condition": {
+        "suit": [
+          "spades"
+        ]
+      },
+      "effects": [
+        {
+          "type": "add_mult",
+          "value": 3
+        }
+      ]
+    }
   },
   {
     "id": "gluttonous_joker",
@@ -37,7 +84,20 @@
     "rarity": "common",
     "cost": 5,
     "effect": "Club cards give +3 Mult when scored.",
-    "trigger": { "when": "on_scored", "condition": { "suit": ["clubs"] }, "effects": [{ "type": "add_mult", "value": 3 }] }
+    "trigger": {
+      "when": "on_scored",
+      "condition": {
+        "suit": [
+          "clubs"
+        ]
+      },
+      "effects": [
+        {
+          "type": "add_mult",
+          "value": 3
+        }
+      ]
+    }
   },
   {
     "id": "jolly_joker",
@@ -45,7 +105,18 @@
     "rarity": "common",
     "cost": 3,
     "effect": "+8 Mult if played hand contains a Pair.",
-    "trigger": { "when": "on_hand_played", "condition": { "containsHand": "pair" }, "effects": [{ "type": "add_mult", "value": 8 }] }
+    "trigger": {
+      "when": "on_hand_played",
+      "condition": {
+        "containsHand": "pair"
+      },
+      "effects": [
+        {
+          "type": "add_mult",
+          "value": 8
+        }
+      ]
+    }
   },
   {
     "id": "zany_joker",
@@ -53,7 +124,18 @@
     "rarity": "common",
     "cost": 4,
     "effect": "+12 Mult if played hand contains Three of a Kind.",
-    "trigger": { "when": "on_hand_played", "condition": { "containsHand": "three_of_a_kind" }, "effects": [{ "type": "add_mult", "value": 12 }] }
+    "trigger": {
+      "when": "on_hand_played",
+      "condition": {
+        "containsHand": "three_of_a_kind"
+      },
+      "effects": [
+        {
+          "type": "add_mult",
+          "value": 12
+        }
+      ]
+    }
   },
   {
     "id": "mad_joker",
@@ -61,7 +143,18 @@
     "rarity": "common",
     "cost": 4,
     "effect": "+10 Mult if played hand contains Two Pair.",
-    "trigger": { "when": "on_hand_played", "condition": { "containsHand": "two_pair" }, "effects": [{ "type": "add_mult", "value": 10 }] }
+    "trigger": {
+      "when": "on_hand_played",
+      "condition": {
+        "containsHand": "two_pair"
+      },
+      "effects": [
+        {
+          "type": "add_mult",
+          "value": 10
+        }
+      ]
+    }
   },
   {
     "id": "crazy_joker",
@@ -69,7 +162,18 @@
     "rarity": "common",
     "cost": 4,
     "effect": "+12 Mult if played hand contains a Straight.",
-    "trigger": { "when": "on_hand_played", "condition": { "containsHand": "straight" }, "effects": [{ "type": "add_mult", "value": 12 }] }
+    "trigger": {
+      "when": "on_hand_played",
+      "condition": {
+        "containsHand": "straight"
+      },
+      "effects": [
+        {
+          "type": "add_mult",
+          "value": 12
+        }
+      ]
+    }
   },
   {
     "id": "droll_joker",
@@ -77,7 +181,18 @@
     "rarity": "common",
     "cost": 4,
     "effect": "+10 Mult if played hand contains a Flush.",
-    "trigger": { "when": "on_hand_played", "condition": { "containsHand": "flush" }, "effects": [{ "type": "add_mult", "value": 10 }] }
+    "trigger": {
+      "when": "on_hand_played",
+      "condition": {
+        "containsHand": "flush"
+      },
+      "effects": [
+        {
+          "type": "add_mult",
+          "value": 10
+        }
+      ]
+    }
   },
   {
     "id": "sly_joker",
@@ -85,7 +200,18 @@
     "rarity": "common",
     "cost": 3,
     "effect": "+50 Chips if played hand contains a Pair.",
-    "trigger": { "when": "on_hand_played", "condition": { "containsHand": "pair" }, "effects": [{ "type": "add_chips", "value": 50 }] }
+    "trigger": {
+      "when": "on_hand_played",
+      "condition": {
+        "containsHand": "pair"
+      },
+      "effects": [
+        {
+          "type": "add_chips",
+          "value": 50
+        }
+      ]
+    }
   },
   {
     "id": "wily_joker",
@@ -93,7 +219,18 @@
     "rarity": "common",
     "cost": 4,
     "effect": "+100 Chips if played hand contains Three of a Kind.",
-    "trigger": { "when": "on_hand_played", "condition": { "containsHand": "three_of_a_kind" }, "effects": [{ "type": "add_chips", "value": 100 }] }
+    "trigger": {
+      "when": "on_hand_played",
+      "condition": {
+        "containsHand": "three_of_a_kind"
+      },
+      "effects": [
+        {
+          "type": "add_chips",
+          "value": 100
+        }
+      ]
+    }
   },
   {
     "id": "clever_joker",
@@ -101,7 +238,18 @@
     "rarity": "common",
     "cost": 4,
     "effect": "+80 Chips if played hand contains Two Pair.",
-    "trigger": { "when": "on_hand_played", "condition": { "containsHand": "two_pair" }, "effects": [{ "type": "add_chips", "value": 80 }] }
+    "trigger": {
+      "when": "on_hand_played",
+      "condition": {
+        "containsHand": "two_pair"
+      },
+      "effects": [
+        {
+          "type": "add_chips",
+          "value": 80
+        }
+      ]
+    }
   },
   {
     "id": "devious_joker",
@@ -109,7 +257,18 @@
     "rarity": "common",
     "cost": 4,
     "effect": "+100 Chips if played hand contains a Straight.",
-    "trigger": { "when": "on_hand_played", "condition": { "containsHand": "straight" }, "effects": [{ "type": "add_chips", "value": 100 }] }
+    "trigger": {
+      "when": "on_hand_played",
+      "condition": {
+        "containsHand": "straight"
+      },
+      "effects": [
+        {
+          "type": "add_chips",
+          "value": 100
+        }
+      ]
+    }
   },
   {
     "id": "crafty_joker",
@@ -117,7 +276,18 @@
     "rarity": "common",
     "cost": 4,
     "effect": "+80 Chips if played hand contains a Flush.",
-    "trigger": { "when": "on_hand_played", "condition": { "containsHand": "flush" }, "effects": [{ "type": "add_chips", "value": 80 }] }
+    "trigger": {
+      "when": "on_hand_played",
+      "condition": {
+        "containsHand": "flush"
+      },
+      "effects": [
+        {
+          "type": "add_chips",
+          "value": 80
+        }
+      ]
+    }
   },
   {
     "id": "half_joker",
@@ -125,7 +295,18 @@
     "rarity": "common",
     "cost": 5,
     "effect": "+20 Mult if played hand contains 3 or fewer cards.",
-    "trigger": { "when": "on_hand_played", "condition": { "maxCards": 3 }, "effects": [{ "type": "add_mult", "value": 20 }] }
+    "trigger": {
+      "when": "on_hand_played",
+      "condition": {
+        "maxCards": 3
+      },
+      "effects": [
+        {
+          "type": "add_mult",
+          "value": 20
+        }
+      ]
+    }
   },
   {
     "id": "banner",
@@ -133,7 +314,16 @@
     "rarity": "common",
     "cost": 5,
     "effect": "+30 Chips per remaining discard.",
-    "trigger": { "when": "on_hand_played", "effects": [{ "type": "add_chips_per", "per": "remaining_discards", "value": 30 }] }
+    "trigger": {
+      "when": "on_hand_played",
+      "effects": [
+        {
+          "type": "add_chips_per",
+          "per": "remaining_discards",
+          "value": 30
+        }
+      ]
+    }
   },
   {
     "id": "fibonacci",
@@ -141,7 +331,24 @@
     "rarity": "uncommon",
     "cost": 8,
     "effect": "Each played A, 2, 3, 5, 8 gives +8 Mult when scored.",
-    "trigger": { "when": "on_scored", "condition": { "rank": ["A","2","3","5","8"] }, "effects": [{ "type": "add_mult", "value": 8 }] }
+    "trigger": {
+      "when": "on_scored",
+      "condition": {
+        "rank": [
+          "A",
+          "2",
+          "3",
+          "5",
+          "8"
+        ]
+      },
+      "effects": [
+        {
+          "type": "add_mult",
+          "value": 8
+        }
+      ]
+    }
   },
   {
     "id": "scary_face",
@@ -149,7 +356,18 @@
     "rarity": "common",
     "cost": 4,
     "effect": "Face cards give +30 Chips when scored.",
-    "trigger": { "when": "on_scored", "condition": { "face": true }, "effects": [{ "type": "add_chips", "value": 30 }] }
+    "trigger": {
+      "when": "on_scored",
+      "condition": {
+        "face": true
+      },
+      "effects": [
+        {
+          "type": "add_chips",
+          "value": 30
+        }
+      ]
+    }
   },
   {
     "id": "even_steven",
@@ -157,7 +375,18 @@
     "rarity": "common",
     "cost": 4,
     "effect": "Even-ranked played cards give +4 Mult when scored.",
-    "trigger": { "when": "on_scored", "condition": { "even": true }, "effects": [{ "type": "add_mult", "value": 4 }] }
+    "trigger": {
+      "when": "on_scored",
+      "condition": {
+        "even": true
+      },
+      "effects": [
+        {
+          "type": "add_mult",
+          "value": 4
+        }
+      ]
+    }
   },
   {
     "id": "odd_todd",
@@ -165,7 +394,18 @@
     "rarity": "common",
     "cost": 4,
     "effect": "Odd-ranked played cards give +31 Chips when scored (A counts as odd).",
-    "trigger": { "when": "on_scored", "condition": { "odd": true }, "effects": [{ "type": "add_chips", "value": 31 }] }
+    "trigger": {
+      "when": "on_scored",
+      "condition": {
+        "odd": true
+      },
+      "effects": [
+        {
+          "type": "add_chips",
+          "value": 31
+        }
+      ]
+    }
   },
   {
     "id": "scholar",
@@ -173,7 +413,24 @@
     "rarity": "common",
     "cost": 4,
     "effect": "Played Aces give +20 Chips and +4 Mult when scored.",
-    "trigger": { "when": "on_scored", "condition": { "rank": ["A"] }, "effects": [{ "type": "add_chips", "value": 20 }, { "type": "add_mult", "value": 4 }] }
+    "trigger": {
+      "when": "on_scored",
+      "condition": {
+        "rank": [
+          "A"
+        ]
+      },
+      "effects": [
+        {
+          "type": "add_chips",
+          "value": 20
+        },
+        {
+          "type": "add_mult",
+          "value": 4
+        }
+      ]
+    }
   },
   {
     "id": "business_card",
@@ -181,7 +438,18 @@
     "rarity": "common",
     "cost": 4,
     "effect": "Played face cards have a 1 in 2 chance to give $2 when scored.",
-    "trigger": { "when": "on_scored", "condition": { "face": true }, "effects": [{ "type": "expected_money", "value": 1 }] }
+    "trigger": {
+      "when": "on_scored",
+      "condition": {
+        "face": true
+      },
+      "effects": [
+        {
+          "type": "expected_money",
+          "value": 1
+        }
+      ]
+    }
   },
   {
     "id": "supernova",
@@ -189,7 +457,15 @@
     "rarity": "common",
     "cost": 5,
     "effect": "Adds times played of this hand to Mult.",
-    "trigger": { "when": "on_hand_played", "effects": [{ "type": "add_mult_per_hand_played", "value": 1 }] }
+    "trigger": {
+      "when": "on_hand_played",
+      "effects": [
+        {
+          "type": "add_mult_per_hand_played",
+          "value": 1
+        }
+      ]
+    }
   },
   {
     "id": "ride_the_bus",
@@ -197,7 +473,15 @@
     "rarity": "common",
     "cost": 6,
     "effect": "+1 Mult per consecutive hand without face card. Resets on face card.",
-    "trigger": { "when": "independent", "effects": [{ "type": "add_mult_counter", "id": "ride_the_bus" }] }
+    "trigger": {
+      "when": "independent",
+      "effects": [
+        {
+          "type": "add_mult_counter",
+          "id": "ride_the_bus"
+        }
+      ]
+    }
   },
   {
     "id": "runner",
@@ -205,7 +489,18 @@
     "rarity": "common",
     "cost": 5,
     "effect": "Gains +15 Chips when a Straight is played. (Scaler)",
-    "trigger": { "when": "on_hand_played", "condition": { "containsHand": "straight" }, "effects": [{ "type": "add_chips_counter", "id": "runner" }] }
+    "trigger": {
+      "when": "on_hand_played",
+      "condition": {
+        "containsHand": "straight"
+      },
+      "effects": [
+        {
+          "type": "add_chips_counter",
+          "id": "runner"
+        }
+      ]
+    }
   },
   {
     "id": "ice_cream",
@@ -213,7 +508,16 @@
     "rarity": "common",
     "cost": 5,
     "effect": "+100 Chips. -5 Chips per hand played.",
-    "trigger": { "when": "on_hand_played", "effects": [{ "type": "add_chips_scaling", "value": 100, "decayPerHand": 5 }] }
+    "trigger": {
+      "when": "on_hand_played",
+      "effects": [
+        {
+          "type": "add_chips_scaling",
+          "value": 100,
+          "decayPerHand": 5
+        }
+      ]
+    }
   },
   {
     "id": "blue_joker",
@@ -221,7 +525,15 @@
     "rarity": "common",
     "cost": 5,
     "effect": "+2 Chips per remaining card in deck.",
-    "trigger": { "when": "on_hand_played", "effects": [{ "type": "add_chips_per_deck_remaining", "value": 2 }] }
+    "trigger": {
+      "when": "on_hand_played",
+      "effects": [
+        {
+          "type": "add_chips_per_deck_remaining",
+          "value": 2
+        }
+      ]
+    }
   },
   {
     "id": "bloodstone",
@@ -229,7 +541,21 @@
     "rarity": "uncommon",
     "cost": 7,
     "effect": "1 in 2 chance for Hearts to give X1.5 Mult when scored.",
-    "trigger": { "when": "on_scored", "condition": { "suit": ["hearts"] }, "effects": [{ "type": "x_mult", "value": 1.25, "probability": 0.5 }] }
+    "trigger": {
+      "when": "on_scored",
+      "condition": {
+        "suit": [
+          "hearts"
+        ]
+      },
+      "effects": [
+        {
+          "type": "x_mult",
+          "value": 1.25,
+          "probability": 0.5
+        }
+      ]
+    }
   },
   {
     "id": "arrowhead",
@@ -237,7 +563,20 @@
     "rarity": "uncommon",
     "cost": 7,
     "effect": "Spade cards give +50 Chips when scored.",
-    "trigger": { "when": "on_scored", "condition": { "suit": ["spades"] }, "effects": [{ "type": "add_chips", "value": 50 }] }
+    "trigger": {
+      "when": "on_scored",
+      "condition": {
+        "suit": [
+          "spades"
+        ]
+      },
+      "effects": [
+        {
+          "type": "add_chips",
+          "value": 50
+        }
+      ]
+    }
   },
   {
     "id": "onyx_agate",
@@ -245,7 +584,20 @@
     "rarity": "uncommon",
     "cost": 7,
     "effect": "Club cards give +7 Mult when scored.",
-    "trigger": { "when": "on_scored", "condition": { "suit": ["clubs"] }, "effects": [{ "type": "add_mult", "value": 7 }] }
+    "trigger": {
+      "when": "on_scored",
+      "condition": {
+        "suit": [
+          "clubs"
+        ]
+      },
+      "effects": [
+        {
+          "type": "add_mult",
+          "value": 7
+        }
+      ]
+    }
   },
   {
     "id": "rough_gem",
@@ -253,7 +605,20 @@
     "rarity": "uncommon",
     "cost": 7,
     "effect": "Diamond cards give $1 when scored.",
-    "trigger": { "when": "on_scored", "condition": { "suit": ["diamonds"] }, "effects": [{ "type": "add_money", "value": 1 }] }
+    "trigger": {
+      "when": "on_scored",
+      "condition": {
+        "suit": [
+          "diamonds"
+        ]
+      },
+      "effects": [
+        {
+          "type": "add_money",
+          "value": 1
+        }
+      ]
+    }
   },
   {
     "id": "baron",
@@ -261,7 +626,20 @@
     "rarity": "rare",
     "cost": 8,
     "effect": "Each King held in hand gives X1.5 Mult.",
-    "trigger": { "when": "on_held_in_hand", "condition": { "rank": ["K"] }, "effects": [{ "type": "x_mult", "value": 1.5 }] }
+    "trigger": {
+      "when": "on_held_in_hand",
+      "condition": {
+        "rank": [
+          "K"
+        ]
+      },
+      "effects": [
+        {
+          "type": "x_mult",
+          "value": 1.5
+        }
+      ]
+    }
   },
   {
     "id": "shoot_the_moon",
@@ -269,7 +647,20 @@
     "rarity": "common",
     "cost": 5,
     "effect": "Each Queen held in hand gives +13 Mult.",
-    "trigger": { "when": "on_held_in_hand", "condition": { "rank": ["Q"] }, "effects": [{ "type": "add_mult", "value": 13 }] }
+    "trigger": {
+      "when": "on_held_in_hand",
+      "condition": {
+        "rank": [
+          "Q"
+        ]
+      },
+      "effects": [
+        {
+          "type": "add_mult",
+          "value": 13
+        }
+      ]
+    }
   },
   {
     "id": "raised_fist",
@@ -277,7 +668,15 @@
     "rarity": "common",
     "cost": 5,
     "effect": "Adds double the rank of lowest card held in hand to Mult.",
-    "trigger": { "when": "on_held_in_hand", "effects": [{ "type": "add_mult_from_lowest_held", "value": 2 }] }
+    "trigger": {
+      "when": "on_held_in_hand",
+      "effects": [
+        {
+          "type": "add_mult_from_lowest_held",
+          "value": 2
+        }
+      ]
+    }
   },
   {
     "id": "mime",
@@ -285,7 +684,15 @@
     "rarity": "uncommon",
     "cost": 5,
     "effect": "Retrigger all card held in hand abilities.",
-    "trigger": { "when": "on_held_in_hand", "effects": [{ "type": "retrigger_held", "value": 1 }] }
+    "trigger": {
+      "when": "on_held_in_hand",
+      "effects": [
+        {
+          "type": "retrigger_held",
+          "value": 1
+        }
+      ]
+    }
   },
   {
     "id": "dusk",
@@ -293,7 +700,15 @@
     "rarity": "uncommon",
     "cost": 5,
     "effect": "Retrigger all played cards in final hand of the round.",
-    "trigger": { "when": "on_scored", "effects": [{ "type": "retrigger_scored_last_hand", "value": 1 }] }
+    "trigger": {
+      "when": "on_scored",
+      "effects": [
+        {
+          "type": "retrigger_scored_last_hand",
+          "value": 1
+        }
+      ]
+    }
   },
   {
     "id": "sock_and_buskin",
@@ -301,7 +716,18 @@
     "rarity": "uncommon",
     "cost": 6,
     "effect": "Retrigger all played face cards.",
-    "trigger": { "when": "on_scored", "condition": { "face": true }, "effects": [{ "type": "retrigger_scored", "value": 1 }] }
+    "trigger": {
+      "when": "on_scored",
+      "condition": {
+        "face": true
+      },
+      "effects": [
+        {
+          "type": "retrigger_scored",
+          "value": 1
+        }
+      ]
+    }
   },
   {
     "id": "hanging_chad",
@@ -309,7 +735,18 @@
     "rarity": "common",
     "cost": 4,
     "effect": "Retrigger first played card 2 additional times.",
-    "trigger": { "when": "on_scored", "condition": { "firstScored": true }, "effects": [{ "type": "retrigger_scored", "value": 2 }] }
+    "trigger": {
+      "when": "on_scored",
+      "condition": {
+        "firstScored": true
+      },
+      "effects": [
+        {
+          "type": "retrigger_scored",
+          "value": 2
+        }
+      ]
+    }
   },
   {
     "id": "steel_joker",
@@ -317,7 +754,16 @@
     "rarity": "uncommon",
     "cost": 7,
     "effect": "X0.2 Mult per Steel card in full deck.",
-    "trigger": { "when": "on_hand_played", "effects": [{ "type": "x_mult_per_deck_enhancement", "enhancement": "steel", "value": 0.2 }] }
+    "trigger": {
+      "when": "on_hand_played",
+      "effects": [
+        {
+          "type": "x_mult_per_deck_enhancement",
+          "enhancement": "steel",
+          "value": 0.2
+        }
+      ]
+    }
   },
   {
     "id": "stone_joker",
@@ -325,7 +771,16 @@
     "rarity": "uncommon",
     "cost": 6,
     "effect": "+25 Chips per Stone card in full deck.",
-    "trigger": { "when": "on_hand_played", "effects": [{ "type": "add_chips_per_deck_enhancement", "enhancement": "stone", "value": 25 }] }
+    "trigger": {
+      "when": "on_hand_played",
+      "effects": [
+        {
+          "type": "add_chips_per_deck_enhancement",
+          "enhancement": "stone",
+          "value": 25
+        }
+      ]
+    }
   },
   {
     "id": "photograph",
@@ -333,7 +788,19 @@
     "rarity": "common",
     "cost": 5,
     "effect": "First played face card gives X2 Mult when scored.",
-    "trigger": { "when": "on_scored", "condition": { "face": true, "firstFace": true }, "effects": [{ "type": "x_mult", "value": 2 }] }
+    "trigger": {
+      "when": "on_scored",
+      "condition": {
+        "face": true,
+        "firstFace": true
+      },
+      "effects": [
+        {
+          "type": "x_mult",
+          "value": 2
+        }
+      ]
+    }
   },
   {
     "id": "the_duo",
@@ -341,7 +808,18 @@
     "rarity": "rare",
     "cost": 8,
     "effect": "X2 Mult if played hand contains a Pair.",
-    "trigger": { "when": "on_hand_played", "condition": { "containsHand": "pair" }, "effects": [{ "type": "x_mult", "value": 2 }] }
+    "trigger": {
+      "when": "on_hand_played",
+      "condition": {
+        "containsHand": "pair"
+      },
+      "effects": [
+        {
+          "type": "x_mult",
+          "value": 2
+        }
+      ]
+    }
   },
   {
     "id": "the_trio",
@@ -349,7 +827,18 @@
     "rarity": "rare",
     "cost": 8,
     "effect": "X3 Mult if played hand contains Three of a Kind.",
-    "trigger": { "when": "on_hand_played", "condition": { "containsHand": "three_of_a_kind" }, "effects": [{ "type": "x_mult", "value": 3 }] }
+    "trigger": {
+      "when": "on_hand_played",
+      "condition": {
+        "containsHand": "three_of_a_kind"
+      },
+      "effects": [
+        {
+          "type": "x_mult",
+          "value": 3
+        }
+      ]
+    }
   },
   {
     "id": "the_family",
@@ -357,7 +846,18 @@
     "rarity": "rare",
     "cost": 8,
     "effect": "X4 Mult if played hand contains Four of a Kind.",
-    "trigger": { "when": "on_hand_played", "condition": { "containsHand": "four_of_a_kind" }, "effects": [{ "type": "x_mult", "value": 4 }] }
+    "trigger": {
+      "when": "on_hand_played",
+      "condition": {
+        "containsHand": "four_of_a_kind"
+      },
+      "effects": [
+        {
+          "type": "x_mult",
+          "value": 4
+        }
+      ]
+    }
   },
   {
     "id": "the_order",
@@ -365,7 +865,18 @@
     "rarity": "rare",
     "cost": 8,
     "effect": "X3 Mult if played hand contains a Straight.",
-    "trigger": { "when": "on_hand_played", "condition": { "containsHand": "straight" }, "effects": [{ "type": "x_mult", "value": 3 }] }
+    "trigger": {
+      "when": "on_hand_played",
+      "condition": {
+        "containsHand": "straight"
+      },
+      "effects": [
+        {
+          "type": "x_mult",
+          "value": 3
+        }
+      ]
+    }
   },
   {
     "id": "the_tribe",
@@ -373,7 +884,18 @@
     "rarity": "rare",
     "cost": 8,
     "effect": "X2 Mult if played hand contains a Flush.",
-    "trigger": { "when": "on_hand_played", "condition": { "containsHand": "flush" }, "effects": [{ "type": "x_mult", "value": 2 }] }
+    "trigger": {
+      "when": "on_hand_played",
+      "condition": {
+        "containsHand": "flush"
+      },
+      "effects": [
+        {
+          "type": "x_mult",
+          "value": 2
+        }
+      ]
+    }
   },
   {
     "id": "smeared_joker",
@@ -381,7 +903,14 @@
     "rarity": "uncommon",
     "cost": 7,
     "effect": "Hearts & Diamonds count as same suit. Spades & Clubs count as same suit.",
-    "trigger": { "when": "passive", "effects": [{ "type": "suit_merge" }] }
+    "trigger": {
+      "when": "passive",
+      "effects": [
+        {
+          "type": "suit_merge"
+        }
+      ]
+    }
   },
   {
     "id": "pareidolia",
@@ -389,7 +918,14 @@
     "rarity": "uncommon",
     "cost": 5,
     "effect": "All cards count as face cards.",
-    "trigger": { "when": "passive", "effects": [{ "type": "all_face" }] }
+    "trigger": {
+      "when": "passive",
+      "effects": [
+        {
+          "type": "all_face"
+        }
+      ]
+    }
   },
   {
     "id": "blueprint",
@@ -397,7 +933,14 @@
     "rarity": "rare",
     "cost": 10,
     "effect": "Copies ability of Joker to the right.",
-    "trigger": { "when": "passive", "effects": [{ "type": "copy_right" }] }
+    "trigger": {
+      "when": "passive",
+      "effects": [
+        {
+          "type": "copy_right"
+        }
+      ]
+    }
   },
   {
     "id": "brainstorm",
@@ -405,7 +948,14 @@
     "rarity": "rare",
     "cost": 10,
     "effect": "Copies ability of leftmost Joker.",
-    "trigger": { "when": "passive", "effects": [{ "type": "copy_leftmost" }] }
+    "trigger": {
+      "when": "passive",
+      "effects": [
+        {
+          "type": "copy_leftmost"
+        }
+      ]
+    }
   },
   {
     "id": "hack",
@@ -413,7 +963,23 @@
     "rarity": "uncommon",
     "cost": 6,
     "effect": "Retrigger each played 2, 3, 4, 5.",
-    "trigger": { "when": "on_scored", "condition": { "rank": ["2","3","4","5"] }, "effects": [{ "type": "retrigger_scored", "value": 1 }] }
+    "trigger": {
+      "when": "on_scored",
+      "condition": {
+        "rank": [
+          "2",
+          "3",
+          "4",
+          "5"
+        ]
+      },
+      "effects": [
+        {
+          "type": "retrigger_scored",
+          "value": 1
+        }
+      ]
+    }
   },
   {
     "id": "seltzer",
@@ -421,7 +987,15 @@
     "rarity": "uncommon",
     "cost": 6,
     "effect": "Retrigger all cards played for the next 10 hands.",
-    "trigger": { "when": "on_scored", "effects": [{ "type": "retrigger_scored", "value": 1 }] }
+    "trigger": {
+      "when": "on_scored",
+      "effects": [
+        {
+          "type": "retrigger_scored",
+          "value": 1
+        }
+      ]
+    }
   },
   {
     "id": "smiley_face",
@@ -429,7 +1003,18 @@
     "rarity": "common",
     "cost": 4,
     "effect": "Face cards give +5 Mult when scored.",
-    "trigger": { "when": "on_scored", "condition": { "face": true }, "effects": [{ "type": "add_mult", "value": 5 }] }
+    "trigger": {
+      "when": "on_scored",
+      "condition": {
+        "face": true
+      },
+      "effects": [
+        {
+          "type": "add_mult",
+          "value": 5
+        }
+      ]
+    }
   },
   {
     "id": "walkie_talkie",
@@ -437,7 +1022,25 @@
     "rarity": "common",
     "cost": 4,
     "effect": "Each played 10 or 4 gives +10 Chips and +4 Mult.",
-    "trigger": { "when": "on_scored", "condition": { "rank": ["10","4"] }, "effects": [{ "type": "add_chips", "value": 10 }, { "type": "add_mult", "value": 4 }] }
+    "trigger": {
+      "when": "on_scored",
+      "condition": {
+        "rank": [
+          "10",
+          "4"
+        ]
+      },
+      "effects": [
+        {
+          "type": "add_chips",
+          "value": 10
+        },
+        {
+          "type": "add_mult",
+          "value": 4
+        }
+      ]
+    }
   },
   {
     "id": "the_idol",
@@ -445,7 +1048,18 @@
     "rarity": "uncommon",
     "cost": 6,
     "effect": "Each scored [rank] of [suit] gives X2 Mult. Changes each round.",
-    "trigger": { "when": "on_scored", "condition": { "dynamicCard": true }, "effects": [{ "type": "x_mult", "value": 2 }] }
+    "trigger": {
+      "when": "on_scored",
+      "condition": {
+        "dynamicCard": true
+      },
+      "effects": [
+        {
+          "type": "x_mult",
+          "value": 2
+        }
+      ]
+    }
   },
   {
     "id": "triboulet",
@@ -453,7 +1067,21 @@
     "rarity": "legendary",
     "cost": 20,
     "effect": "Played Kings and Queens each give X2 Mult when scored.",
-    "trigger": { "when": "on_scored", "condition": { "rank": ["K","Q"] }, "effects": [{ "type": "x_mult", "value": 2 }] }
+    "trigger": {
+      "when": "on_scored",
+      "condition": {
+        "rank": [
+          "K",
+          "Q"
+        ]
+      },
+      "effects": [
+        {
+          "type": "x_mult",
+          "value": 2
+        }
+      ]
+    }
   },
   {
     "id": "yorick",
@@ -461,7 +1089,16 @@
     "rarity": "legendary",
     "cost": 20,
     "effect": "X5 Mult after 23 cards discarded (scaler).",
-    "trigger": { "when": "on_hand_played", "effects": [{ "type": "x_mult_counter", "id": "yorick", "value": 5 }] }
+    "trigger": {
+      "when": "on_hand_played",
+      "effects": [
+        {
+          "type": "x_mult_counter",
+          "id": "yorick",
+          "value": 5
+        }
+      ]
+    }
   },
   {
     "id": "canio",
@@ -469,7 +1106,16 @@
     "rarity": "legendary",
     "cost": 20,
     "effect": "X1 Mult. Gains X1 Mult when a face card is destroyed.",
-    "trigger": { "when": "passive", "effects": [{ "type": "x_mult_counter", "id": "canio", "value": 1 }] }
+    "trigger": {
+      "when": "passive",
+      "effects": [
+        {
+          "type": "x_mult_counter",
+          "id": "canio",
+          "value": 1
+        }
+      ]
+    }
   },
   {
     "id": "chicot",
@@ -477,7 +1123,14 @@
     "rarity": "legendary",
     "cost": 20,
     "effect": "Disables effect of every boss blind.",
-    "trigger": { "when": "passive", "effects": [{ "type": "boss_immunity" }] }
+    "trigger": {
+      "when": "passive",
+      "effects": [
+        {
+          "type": "boss_immunity"
+        }
+      ]
+    }
   },
   {
     "id": "perkeo",
@@ -485,7 +1138,14 @@
     "rarity": "legendary",
     "cost": 20,
     "effect": "At end of shop, creates a Negative copy of one consumable.",
-    "trigger": { "when": "shop_end", "effects": [{ "type": "copy_consumable_negative" }] }
+    "trigger": {
+      "when": "shop_end",
+      "effects": [
+        {
+          "type": "copy_consumable_negative"
+        }
+      ]
+    }
   },
   {
     "id": "eight_ball",
@@ -493,7 +1153,20 @@
     "rarity": "common",
     "cost": 5,
     "effect": "1 in 4 chance for each played 8 to create a Tarot card when scored (must have room).",
-    "trigger": { "when": "on_scored", "condition": { "rank": ["8"] }, "effects": [{ "type": "expected_money", "value": 0.6 }] }
+    "trigger": {
+      "when": "on_scored",
+      "condition": {
+        "rank": [
+          "8"
+        ]
+      },
+      "effects": [
+        {
+          "type": "expected_money",
+          "value": 0.6
+        }
+      ]
+    }
   },
   {
     "id": "misprint",
@@ -501,7 +1174,15 @@
     "rarity": "common",
     "cost": 4,
     "effect": "+0–23 Mult (random each scoring).",
-    "trigger": { "when": "independent", "effects": [{ "type": "add_mult", "value": 11 }] }
+    "trigger": {
+      "when": "independent",
+      "effects": [
+        {
+          "type": "add_mult",
+          "value": 11
+        }
+      ]
+    }
   },
   {
     "id": "gros_michel",
@@ -509,7 +1190,15 @@
     "rarity": "common",
     "cost": 5,
     "effect": "+15 Mult. 1 in 6 chance to be destroyed at end of round.",
-    "trigger": { "when": "independent", "effects": [{ "type": "add_mult", "value": 15 }] }
+    "trigger": {
+      "when": "independent",
+      "effects": [
+        {
+          "type": "add_mult",
+          "value": 15
+        }
+      ]
+    }
   },
   {
     "id": "cavendish",
@@ -517,7 +1206,15 @@
     "rarity": "common",
     "cost": 4,
     "effect": "X3 Mult. 1 in 1000 chance to be destroyed at end of round.",
-    "trigger": { "when": "independent", "effects": [{ "type": "x_mult", "value": 3 }] }
+    "trigger": {
+      "when": "independent",
+      "effects": [
+        {
+          "type": "x_mult",
+          "value": 3
+        }
+      ]
+    }
   },
   {
     "id": "acrobat",
@@ -525,7 +1222,18 @@
     "rarity": "uncommon",
     "cost": 6,
     "effect": "X3 Mult on final hand of round.",
-    "trigger": { "when": "on_hand_played", "condition": { "lastHandOfRound": true }, "effects": [{ "type": "x_mult", "value": 3 }] }
+    "trigger": {
+      "when": "on_hand_played",
+      "condition": {
+        "lastHandOfRound": true
+      },
+      "effects": [
+        {
+          "type": "x_mult",
+          "value": 3
+        }
+      ]
+    }
   },
   {
     "id": "mystic_summit",
@@ -533,7 +1241,18 @@
     "rarity": "common",
     "cost": 5,
     "effect": "+15 Mult when 0 discards remaining.",
-    "trigger": { "when": "on_hand_played", "condition": { "noDiscardsLeft": true }, "effects": [{ "type": "add_mult", "value": 15 }] }
+    "trigger": {
+      "when": "on_hand_played",
+      "condition": {
+        "noDiscardsLeft": true
+      },
+      "effects": [
+        {
+          "type": "add_mult",
+          "value": 15
+        }
+      ]
+    }
   },
   {
     "id": "stuntman",
@@ -541,7 +1260,15 @@
     "rarity": "rare",
     "cost": 7,
     "effect": "+250 Chips. -2 hand size.",
-    "trigger": { "when": "independent", "effects": [{ "type": "add_chips", "value": 250 }] }
+    "trigger": {
+      "when": "independent",
+      "effects": [
+        {
+          "type": "add_chips",
+          "value": 250
+        }
+      ]
+    }
   },
   {
     "id": "bull",
@@ -549,7 +1276,15 @@
     "rarity": "uncommon",
     "cost": 6,
     "effect": "+2 Chips per dollar held.",
-    "trigger": { "when": "on_hand_played", "effects": [{ "type": "add_chips_per_money", "value": 2 }] }
+    "trigger": {
+      "when": "on_hand_played",
+      "effects": [
+        {
+          "type": "add_chips_per_money",
+          "value": 2
+        }
+      ]
+    }
   },
   {
     "id": "bootstraps",
@@ -557,7 +1292,15 @@
     "rarity": "uncommon",
     "cost": 7,
     "effect": "+2 Mult per $5 held.",
-    "trigger": { "when": "on_hand_played", "effects": [{ "type": "add_mult_per_money", "value": 0.4 }] }
+    "trigger": {
+      "when": "on_hand_played",
+      "effects": [
+        {
+          "type": "add_mult_per_money",
+          "value": 0.4
+        }
+      ]
+    }
   },
   {
     "id": "loyalty_card",
@@ -565,7 +1308,15 @@
     "rarity": "uncommon",
     "cost": 5,
     "effect": "X4 Mult every 6 hands played.",
-    "trigger": { "when": "on_hand_played", "effects": [{ "type": "x_mult", "value": 1.5 }] }
+    "trigger": {
+      "when": "on_hand_played",
+      "effects": [
+        {
+          "type": "x_mult",
+          "value": 1.5
+        }
+      ]
+    }
   },
   {
     "id": "ceremonial_dagger",
@@ -573,7 +1324,15 @@
     "rarity": "uncommon",
     "cost": 6,
     "effect": "Sells joker to right at start of blind, gains 2x its sell value as Mult (scaler).",
-    "trigger": { "when": "on_hand_played", "effects": [{ "type": "add_mult_counter", "id": "ceremonial_dagger" }] }
+    "trigger": {
+      "when": "on_hand_played",
+      "effects": [
+        {
+          "type": "add_mult_counter",
+          "id": "ceremonial_dagger"
+        }
+      ]
+    }
   },
   {
     "id": "constellation",
@@ -581,7 +1340,16 @@
     "rarity": "uncommon",
     "cost": 6,
     "effect": "Gains X0.1 Mult each time a Planet card is used (scaler).",
-    "trigger": { "when": "on_hand_played", "effects": [{ "type": "x_mult_counter", "id": "constellation", "value": 0.1 }] }
+    "trigger": {
+      "when": "on_hand_played",
+      "effects": [
+        {
+          "type": "x_mult_counter",
+          "id": "constellation",
+          "value": 0.1
+        }
+      ]
+    }
   },
   {
     "id": "green_joker",
@@ -589,7 +1357,15 @@
     "rarity": "common",
     "cost": 4,
     "effect": "+1 Mult per hand played, -1 Mult per discard.",
-    "trigger": { "when": "on_hand_played", "effects": [{ "type": "add_mult_counter", "id": "green_joker" }] }
+    "trigger": {
+      "when": "on_hand_played",
+      "effects": [
+        {
+          "type": "add_mult_counter",
+          "id": "green_joker"
+        }
+      ]
+    }
   },
   {
     "id": "square_joker",
@@ -597,7 +1373,18 @@
     "rarity": "common",
     "cost": 4,
     "effect": "Gains +4 Chips when played hand has exactly 4 cards (scaler).",
-    "trigger": { "when": "on_hand_played", "condition": { "exactCards": 4 }, "effects": [{ "type": "add_chips_counter", "id": "square_joker" }] }
+    "trigger": {
+      "when": "on_hand_played",
+      "condition": {
+        "exactCards": 4
+      },
+      "effects": [
+        {
+          "type": "add_chips_counter",
+          "id": "square_joker"
+        }
+      ]
+    }
   },
   {
     "id": "hiker",
@@ -605,7 +1392,15 @@
     "rarity": "uncommon",
     "cost": 5,
     "effect": "Each scored card permanently gains +5 Chips when scored.",
-    "trigger": { "when": "on_scored", "effects": [{ "type": "add_chips", "value": 5 }] }
+    "trigger": {
+      "when": "on_scored",
+      "effects": [
+        {
+          "type": "add_chips",
+          "value": 5
+        }
+      ]
+    }
   },
   {
     "id": "red_card",
@@ -613,7 +1408,15 @@
     "rarity": "common",
     "cost": 5,
     "effect": "Gains +3 Mult when any Booster Pack is skipped (scaler).",
-    "trigger": { "when": "independent", "effects": [{ "type": "add_mult_counter", "id": "red_card" }] }
+    "trigger": {
+      "when": "independent",
+      "effects": [
+        {
+          "type": "add_mult_counter",
+          "id": "red_card"
+        }
+      ]
+    }
   },
   {
     "id": "four_fingers",
@@ -621,7 +1424,14 @@
     "rarity": "uncommon",
     "cost": 7,
     "effect": "All Flushes and Straights can be made with 4 cards.",
-    "trigger": { "when": "passive", "effects": [{ "type": "fourfingers" }] }
+    "trigger": {
+      "when": "passive",
+      "effects": [
+        {
+          "type": "fourfingers"
+        }
+      ]
+    }
   },
   {
     "id": "shortcut",
@@ -629,7 +1439,14 @@
     "rarity": "uncommon",
     "cost": 7,
     "effect": "Allows Straights to be made with gaps of 1 rank (e.g. 10 8 6 5 3).",
-    "trigger": { "when": "passive", "effects": [{ "type": "shortcut" }] }
+    "trigger": {
+      "when": "passive",
+      "effects": [
+        {
+          "type": "shortcut"
+        }
+      ]
+    }
   },
   {
     "id": "drunkard",
@@ -637,7 +1454,15 @@
     "rarity": "common",
     "cost": 4,
     "effect": "+1 discard each round.",
-    "trigger": { "when": "passive", "effects": [{ "type": "extra_discard", "value": 1 }] }
+    "trigger": {
+      "when": "passive",
+      "effects": [
+        {
+          "type": "extra_discard",
+          "value": 1
+        }
+      ]
+    }
   },
   {
     "id": "juggler",
@@ -645,7 +1470,15 @@
     "rarity": "common",
     "cost": 4,
     "effect": "+1 hand size.",
-    "trigger": { "when": "passive", "effects": [{ "type": "extra_hand_size", "value": 1 }] }
+    "trigger": {
+      "when": "passive",
+      "effects": [
+        {
+          "type": "extra_hand_size",
+          "value": 1
+        }
+      ]
+    }
   },
   {
     "id": "troubadour",
@@ -653,6 +1486,830 @@
     "rarity": "uncommon",
     "cost": 6,
     "effect": "+2 hand size, -1 hand per round.",
-    "trigger": { "when": "passive", "effects": [{ "type": "extra_hand_size", "value": 2 }] }
+    "trigger": {
+      "when": "passive",
+      "effects": [
+        {
+          "type": "extra_hand_size",
+          "value": 2
+        }
+      ]
+    }
+  },
+  {
+    "id": "abstract",
+    "name": "Abstract Joker",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Abstract_Joker)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "ancient",
+    "name": "Ancient Joker",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Ancient_Joker)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "astronomer",
+    "name": "Astronomer",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Astronomer)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "baseball",
+    "name": "Baseball Card",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Baseball_Card)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "blackboard",
+    "name": "Blackboard",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Blackboard)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "burglar",
+    "name": "Burglar",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Burglar)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "burnt_joker",
+    "name": "Burnt Joker",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Burnt_Joker)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "campfire",
+    "name": "Campfire",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Campfire)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "card_sharp",
+    "name": "Card Sharp",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Card_Sharp)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "cartomancer",
+    "name": "Cartomancer",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Cartomancer)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "castle",
+    "name": "Castle",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Castle)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "certificate",
+    "name": "Certificate",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Certificate)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "chaos",
+    "name": "Chaos the Clown",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Chaos_the_Clown)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "cloud_9",
+    "name": "Cloud 9",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Cloud_9)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "credit_card",
+    "name": "Credit Card",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Credit_Card)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "delayed_grat",
+    "name": "Delayed Gratification",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Delayed_Gratification)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "diet_cola",
+    "name": "Diet Cola",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Diet_Cola)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "dna",
+    "name": "DNA",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/DNA)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "drivers_license",
+    "name": "Driver's License",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Driver's_License)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "egg",
+    "name": "Egg",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Egg)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "erosion",
+    "name": "Erosion",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Erosion)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "faceless",
+    "name": "Faceless Joker",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Faceless_Joker)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "flash",
+    "name": "Flash Card",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Flash_Card)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "flower_pot",
+    "name": "Flower Pot",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Flower_Pot)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "fortune_teller",
+    "name": "Fortune Teller",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Fortune_Teller)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "gift",
+    "name": "Gift Card",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Gift_Card)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "glass_joker",
+    "name": "Glass Joker",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Glass_Joker)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "golden",
+    "name": "Golden Joker",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Golden_Joker)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "ticket",
+    "name": "Golden Ticket",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Golden_Ticket)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "hallucination",
+    "name": "Hallucination",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Hallucination)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "hit_the_road",
+    "name": "Hit the Road",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Hit_the_Road)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "hologram",
+    "name": "Hologram",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Hologram)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "invisible",
+    "name": "Invisible Joker",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Invisible_Joker)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "joker_stencil",
+    "name": "Joker Stencil",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Joker_Stencil)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "luchador",
+    "name": "Luchador",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Luchador)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "lucky_cat",
+    "name": "Lucky Cat",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Lucky_Cat)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "madness",
+    "name": "Madness",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Madness)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "mail",
+    "name": "Mail-In Rebate",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Mail-In_Rebate)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "marble",
+    "name": "Marble Joker",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Marble_Joker)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "matador",
+    "name": "Matador",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Matador)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "merry_andy",
+    "name": "Merry Andy",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Merry_Andy)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "midas_mask",
+    "name": "Midas Mask",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Midas_Mask)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "mr_bones",
+    "name": "Mr. Bones",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Mr._Bones)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "obelisk",
+    "name": "Obelisk",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Obelisk)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "oops",
+    "name": "Oops! All 6s",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Oops!_All_6s)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "popcorn",
+    "name": "Popcorn",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Popcorn)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "ramen",
+    "name": "Ramen",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Ramen)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "reserved_parking",
+    "name": "Reserved Parking",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Reserved_Parking)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "riff_raff",
+    "name": "Riff-Raff",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Riff-Raff)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "rocket",
+    "name": "Rocket",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Rocket)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "satellite",
+    "name": "Satellite",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Satellite)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "seance",
+    "name": "Séance",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Séance)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "seeing_double",
+    "name": "Seeing Double",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Seeing_Double)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "ring_master",
+    "name": "Showman",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Showman)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "sixth_sense",
+    "name": "Sixth Sense",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Sixth_Sense)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "space",
+    "name": "Space Joker",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Space_Joker)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "trousers",
+    "name": "Spare Trousers",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Spare_Trousers)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "splash",
+    "name": "Splash",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Splash)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "superposition",
+    "name": "Superposition",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Superposition)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "swashbuckler",
+    "name": "Swashbuckler",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Swashbuckler)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "throwback",
+    "name": "Throwback",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Throwback)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "todo_list",
+    "name": "To Do List",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/To_Do_List)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "to_the_moon",
+    "name": "To the Moon",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/To_the_Moon)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "trading",
+    "name": "Trading Card",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Trading_Card)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "turtle_bean",
+    "name": "Turtle Bean",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Turtle_Bean)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "vagabond",
+    "name": "Vagabond",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Vagabond)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "vampire",
+    "name": "Vampire",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Vampire)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
+  },
+  {
+    "id": "wee",
+    "name": "Wee Joker",
+    "rarity": "common",
+    "cost": 5,
+    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Wee_Joker)",
+    "trigger": {
+      "when": "passive",
+      "effects": []
+    },
+    "_stub": true
   }
 ]
