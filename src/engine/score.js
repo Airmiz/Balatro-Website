@@ -111,6 +111,11 @@ function handMatchesCondition(cond, ctx) {
   }
   if (cond.repeatHand && (ctx.timesHandPlayed || 0) === 0) return false;
   if (cond.lowMoney != null && (ctx.money || 0) > cond.lowMoney) return false;
+  if (cond.everyNthHand != null) {
+    // Fires when the next hand played (handsPlayedTotal + 1) is a multiple of N.
+    const nextHand = (ctx.handsPlayedTotal || 0) + 1;
+    if (nextHand % cond.everyNthHand !== 0) return false;
+  }
   return true;
 }
 
@@ -333,6 +338,7 @@ export function simulatePlay({ handCards, playedIdx, jokers, handLevels, planets
     remainingDiscards: runState?.discardsLeft ?? 0,
     handsLeft: runState?.handsLeft ?? 1,
     timesHandPlayed: runState?.timesHandPlayed?.[handType] ?? 0,
+    handsPlayedTotal: runState?.handsPlayedTotal ?? 0,
     money: runState?.money ?? 0,
     allFace: flags.allFace,
     held,

@@ -1310,10 +1310,13 @@
     "effect": "X4 Mult every 6 hands played.",
     "trigger": {
       "when": "on_hand_played",
+      "condition": {
+        "everyNthHand": 6
+      },
       "effects": [
         {
           "type": "x_mult",
-          "value": 1.5
+          "value": 4
         }
       ]
     }

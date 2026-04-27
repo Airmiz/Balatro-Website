@@ -58,6 +58,16 @@ describe('simulatePlay (curated jokers)', () => {
     expect(r2.chips).toBeGreaterThan(r1.chips);
   });
 
+  it('Loyalty Card fires X4 on the 6th hand only', () => {
+    const hand = [makeCard('K', 'spades'), makeCard('K', 'hearts')];
+    const off = simulatePlay({ handCards: hand, playedIdx: [0, 1], jokers: [{ id: 'loyalty_card' }], handLevels: {}, planets: [], runState: { ...baseRun, handsPlayedTotal: 0 }, boss: null });
+    expect(off.xMult).toBe(1);
+    const on = simulatePlay({ handCards: hand, playedIdx: [0, 1], jokers: [{ id: 'loyalty_card' }], handLevels: {}, planets: [], runState: { ...baseRun, handsPlayedTotal: 5 }, boss: null });
+    expect(on.xMult).toBe(4);
+    const off2 = simulatePlay({ handCards: hand, playedIdx: [0, 1], jokers: [{ id: 'loyalty_card' }], handLevels: {}, planets: [], runState: { ...baseRun, handsPlayedTotal: 6 }, boss: null });
+    expect(off2.xMult).toBe(1);
+  });
+
   it('Card Sharp triggers only on a repeat hand', () => {
     const hand = [makeCard('K', 'spades'), makeCard('K', 'hearts')];
     // No prior plays of pair → no x mult
