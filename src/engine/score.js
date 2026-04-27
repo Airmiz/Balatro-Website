@@ -49,7 +49,7 @@ function resolveJokerChain(jokers) {
 }
 
 function passiveFlags(jokers) {
-  const flags = { allFace: false, suitMerge: false, bossImmune: false, fourfingers: false, shortcut: false };
+  const flags = { allFace: false, suitMerge: false, bossImmune: false, fourfingers: false, shortcut: false, splash: false, oopsAll6s: false };
   for (const j of jokers) {
     const def = getJokerDef(j.id);
     if (!def) continue;
@@ -59,6 +59,8 @@ function passiveFlags(jokers) {
       if (eff.type === 'boss_immunity') flags.bossImmune = true;
       if (eff.type === 'fourfingers') flags.fourfingers = true;
       if (eff.type === 'shortcut') flags.shortcut = true;
+      if (eff.type === 'splash') flags.splash = true;
+      if (eff.type === 'doubles_probabilities') flags.oopsAll6s = true;
     }
   }
   return flags;
@@ -88,6 +90,27 @@ function handMatchesCondition(cond, ctx) {
   if (cond.exactCards != null && ctx.playedCount !== cond.exactCards) return false;
   if (cond.lastHandOfRound && ctx.handsLeft !== 1) return false;
   if (cond.noDiscardsLeft && ctx.remainingDiscards !== 0) return false;
+  if (cond.allHeldSuit && Array.isArray(cond.allHeldSuit)) {
+    if (!ctx.held || ctx.held.length === 0) {
+      // empty hand still counts as "all match" in Balatro
+    } else if (!ctx.held.every((c) => c.enhancement === 'stone' || c.enhancement === 'wild' || cond.allHeldSuit.includes(c.suit))) {
+      return false;
+    }
+  }
+  if (cond.allSuitsPlayed) {
+    const suits = new Set();
+    for (const c of ctx.scored || []) {
+      if (c.enhancement === 'stone') continue;
+      if (c.enhancement === 'wild') {
+        // wild satisfies anything; we treat as covering all
+        return true;
+      }
+      suits.add(c.suit);
+    }
+    if (suits.size < 4) return false;
+  }
+  if (cond.repeatHand && (ctx.timesHandPlayed || 0) === 0) return false;
+  if (cond.lowMoney != null && (ctx.money || 0) > cond.lowMoney) return false;
   return true;
 }
 
@@ -187,11 +210,14 @@ export function simulatePlay({ handCards, playedIdx, jokers, handLevels, planets
   const breakdown = [];
   breakdown.push({ label: `Base ${handType}`, chips: baseChips, mult: baseMult });
 
-  const firstScoredIndex = 0;
-  const firstFaceIndex = scored.findIndex((c) => isFace(c, { allFace: flags.allFace }));
+  // Splash makes every played card a "scoring" card.
+  const effectiveScored = flags.splash ? played : scored;
 
-  for (let idx = 0; idx < scored.length; idx++) {
-    const card = scored[idx];
+  const firstScoredIndex = 0;
+  const firstFaceIndex = effectiveScored.findIndex((c) => isFace(c, { allFace: flags.allFace }));
+
+  for (let idx = 0; idx < effectiveScored.length; idx++) {
+    const card = effectiveScored[idx];
     if (debuffedCards.has(card.id)) {
       breakdown.push({ label: `${card.rank}${card.suit[0].toUpperCase()} debuffed`, chips: 0, mult: 0 });
       continue;
@@ -225,10 +251,15 @@ export function simulatePlay({ handCards, playedIdx, jokers, handLevels, planets
         if (eff.type === 'add_chips') jokerContrib.chips += eff.value;
         else if (eff.type === 'add_mult') jokerContrib.mult += eff.value;
         else if (eff.type === 'x_mult') {
-          const p = eff.probability ?? 1;
+          const baseProb = eff.probability ?? 1;
+          const p = flags.oopsAll6s ? Math.min(1, baseProb * 2) : baseProb;
           jokerContrib.xMult *= 1 + (eff.value - 1) * p;
         } else if (eff.type === 'add_money') jokerContrib.money += eff.value;
-        else if (eff.type === 'expected_money') jokerContrib.money += eff.value * 0.5;
+        else if (eff.type === 'expected_money') {
+          const baseProb = eff.probability ?? 0.5;
+          const p = flags.oopsAll6s ? Math.min(1, baseProb * 2) : baseProb;
+          jokerContrib.money += eff.value * p;
+        }
       }
     }
 
@@ -249,6 +280,7 @@ export function simulatePlay({ handCards, playedIdx, jokers, handLevels, planets
 
   const heldCtx = { handType, playedCount: played.length, allFace: flags.allFace };
   const mimeCount = jokers.filter((j) => j.id === 'mime').length;
+  let expectedHeldMoney = 0;
   for (const card of held) {
     const trips = 1 + mimeCount;
     if (card.enhancement === 'steel') {
@@ -266,6 +298,11 @@ export function simulatePlay({ handCards, playedIdx, jokers, handLevels, planets
         if (eff.type === 'add_mult') heldMult += eff.value;
         else if (eff.type === 'add_chips') heldChips += eff.value;
         else if (eff.type === 'x_mult') heldX *= eff.value;
+        else if (eff.type === 'expected_money') {
+          const baseProb = eff.probability ?? 0.5;
+          const prob = flags.oopsAll6s ? Math.min(1, baseProb * 2) : baseProb;
+          expectedHeldMoney += eff.value * prob * trips;
+        }
         else if (eff.type === 'add_mult_from_lowest_held') {
           // handled separately below
         }
@@ -277,6 +314,9 @@ export function simulatePlay({ handCards, playedIdx, jokers, handLevels, planets
     if (heldChips || heldMult || heldX !== 1) {
       breakdown.push({ label: `${card.rank}${card.suit[0].toUpperCase()} held`, chips: heldChips * trips, mult: heldMult * trips, xMult: Math.pow(heldX, trips) });
     }
+  }
+  if (expectedHeldMoney > 0) {
+    breakdown.push({ label: `Held EV money`, chips: 0, mult: 0, money: expectedHeldMoney });
   }
 
   if (jokers.some((j) => j.id === 'raised_fist') && held.length) {
@@ -293,7 +333,10 @@ export function simulatePlay({ handCards, playedIdx, jokers, handLevels, planets
     remainingDiscards: runState?.discardsLeft ?? 0,
     handsLeft: runState?.handsLeft ?? 1,
     timesHandPlayed: runState?.timesHandPlayed?.[handType] ?? 0,
+    money: runState?.money ?? 0,
     allFace: flags.allFace,
+    held,
+    scored: effectiveScored,
   };
 
   for (const act of actions) {
@@ -352,6 +395,60 @@ export function simulatePlay({ handCards, playedIdx, jokers, handLevels, planets
           const decayed = Math.max(0, eff.value - (eff.decayPerHand || 0) * (runState?.handsPlayedTotal || 0));
           chips += decayed;
           breakdown.push({ label, chips: decayed, mult: 0 });
+        } else if (eff.type === 'add_mult_scaling') {
+          const decayed = Math.max(0, eff.value - (eff.decayPerHand || 0) * (runState?.handsPlayedTotal || 0));
+          mult += decayed;
+          breakdown.push({ label, chips: 0, mult: decayed });
+        } else if (eff.type === 'x_mult_decay') {
+          // e.g. Ramen: starts at 2, loses decayPerHand per played card consumed
+          const decayed = Math.max(1, eff.value - (eff.decayPerCard || 0) * (runState?.cardsConsumed || 0));
+          xMult *= decayed;
+          breakdown.push({ label, chips: 0, mult: 0, xMult: decayed });
+        } else if (eff.type === 'add_mult_per_joker_count') {
+          const v = eff.value * jokers.length;
+          mult += v;
+          breakdown.push({ label, chips: 0, mult: v });
+        } else if (eff.type === 'x_mult_per_empty_slot') {
+          const empty = Math.max(0, (runState?.maxJokerSlots || 5) - jokers.length);
+          const factor = 1 + eff.value * empty;
+          xMult *= factor;
+          breakdown.push({ label, chips: 0, mult: 0, xMult: factor });
+        } else if (eff.type === 'x_mult_per_joker_rarity') {
+          const count = jokers.filter((j) => getJokerDef(j.id)?.rarity === eff.rarity).length;
+          const factor = 1 + eff.value * count;
+          xMult *= factor;
+          breakdown.push({ label, chips: 0, mult: 0, xMult: factor });
+        } else if (eff.type === 'x_mult_if_deck_enhancement_count') {
+          let count = 0;
+          if (eff.enhancement === 'enhanced_total') {
+            for (const v of Object.values(runState?.deckEnhancementCounts ?? {})) count += v;
+          } else {
+            count = runState?.deckEnhancementCounts?.[eff.enhancement] ?? 0;
+          }
+          if (count >= (eff.threshold ?? 16)) {
+            xMult *= eff.value;
+            breakdown.push({ label, chips: 0, mult: 0, xMult: eff.value });
+          }
+        } else if (eff.type === 'x_mult_if_seeing_double') {
+          const suits = new Set();
+          for (const c of effectiveScored) {
+            if (c.enhancement === 'stone') continue;
+            suits.add(c.enhancement === 'wild' ? 'wild' : c.suit);
+          }
+          const hasClub = suits.has('clubs') || suits.has('wild');
+          const hasOther = [...suits].some((s) => s !== 'clubs' && s !== 'wild') || suits.has('wild');
+          if (hasClub && hasOther) {
+            xMult *= eff.value;
+            breakdown.push({ label, chips: 0, mult: 0, xMult: eff.value });
+          }
+        } else if (eff.type === 'add_chips_per_card_below_deck') {
+          const total = runState?.deckTotalCards ?? 52;
+          const below = Math.max(0, 52 - total);
+          const v = eff.value * below;
+          chips += v;
+          breakdown.push({ label, chips: v, mult: 0 });
+        } else if (eff.type === 'expected_money_on_scored') {
+          // money on scoring cards w/ enhancement, handled in card loop already
         }
       }
     }

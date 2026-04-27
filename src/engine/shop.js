@@ -61,14 +61,27 @@ function nameFromId(id) {
 
 // ---------- Joker evaluation (also used for pack EV) ----------
 
+// Heuristic shop value (× baseline play score) for utility jokers that have
+// no per-hand chip/mult contribution. Used as a fallback when evalJoker
+// returns 0 hand-delta and 0 arch-delta, so they don't always rank dead-last.
 const JOKER_META_HEURISTIC = {
-  drunkard:    0.30,
-  juggler:     0.25,
-  troubadour:  0.10,
-  paint_brush: 0.25,
-  riff_raff:   0.40,
-  burglar:     0.50,
-  delayed_grat:0.10,
+  // direct-utility small-but-real
+  drunkard:    0.30, juggler:     0.25, troubadour:  0.10, paint_brush: 0.25,
+  // round-buff jokers
+  burglar:     0.55, riff_raff:   0.45, merry_andy:  0.35,
+  // money jokers (~$/round → small fraction of avg play score)
+  delayed_grat:0.20, golden:      0.25, egg:         0.18, gift:        0.12,
+  rocket:      0.35, satellite:   0.28, cloud_9:     0.22, to_the_moon: 0.18,
+  faceless:    0.20, mail:        0.18, trading:     0.20, fortune_teller:0.15,
+  // shop / probability jokers
+  astronomer:  0.28, chaos:       0.18, credit_card: 0.05, hallucination:0.10,
+  oops:        0.45, ring_master: 0.20, todo_list:   0.18, vagabond:    0.30,
+  // utility one-time
+  cartomancer: 0.22, certificate: 0.20, diet_cola:   0.12, dna:         0.30,
+  invisible:   0.40, luchador:    0.20, marble:      0.18, matador:     0.30,
+  midas_mask:  0.30, mr_bones:    0.25, seance:      0.18, sixth_sense: 0.20,
+  space:       0.35, splash:      0.25, superposition:0.22, swashbuckler:0.30,
+  burnt_joker: 0.35, turtle_bean: 0.20,
 };
 
 function evalJoker(jokerId, ctx) {

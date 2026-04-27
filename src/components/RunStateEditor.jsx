@@ -89,6 +89,8 @@ export default function RunStateEditor({ run, handLevels, onRunChange, onHandLev
           <Stepper label="Discards left" value={run.discardsLeft} onChange={(v) => set({ discardsLeft: v })} min={0} max={20} />
           <Stepper label="Money" value={run.money} onChange={(v) => set({ money: v })} min={-20} max={999} />
           <Stepper label="Deck remaining" value={run.deckRemaining} onChange={(v) => set({ deckRemaining: v })} max={120} />
+          <Stepper label="Deck total" value={run.deckTotalCards ?? 52} onChange={(v) => set({ deckTotalCards: v })} min={0} max={120} />
+          <Stepper label="Joker slots" value={run.maxJokerSlots ?? 5} onChange={(v) => set({ maxJokerSlots: v })} min={1} max={10} />
         </div>
       </div>
 

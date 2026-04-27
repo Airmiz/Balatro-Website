@@ -1500,816 +1500,1094 @@
     "id": "abstract",
     "name": "Abstract Joker",
     "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Abstract_Joker)",
+    "cost": 4,
+    "effect": "+3 Mult per Joker held.",
     "trigger": {
-      "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "when": "on_hand_played",
+      "effects": [
+        {
+          "type": "add_mult_per_joker_count",
+          "value": 3
+        }
+      ]
+    }
   },
   {
     "id": "ancient",
     "name": "Ancient Joker",
-    "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Ancient_Joker)",
+    "rarity": "rare",
+    "cost": 8,
+    "effect": "X1.5 Mult per scored card of a daily-rotating suit (random).",
     "trigger": {
-      "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "when": "on_scored",
+      "effects": [
+        {
+          "type": "x_mult",
+          "value": 1.5,
+          "probability": 0.25
+        }
+      ]
+    }
   },
   {
     "id": "astronomer",
     "name": "Astronomer",
-    "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Astronomer)",
+    "rarity": "uncommon",
+    "cost": 8,
+    "effect": "All Planet cards and Celestial packs are free.",
     "trigger": {
       "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "effects": [
+        {
+          "type": "utility"
+        }
+      ]
+    }
   },
   {
     "id": "baseball",
     "name": "Baseball Card",
-    "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Baseball_Card)",
+    "rarity": "rare",
+    "cost": 8,
+    "effect": "Uncommon Jokers each give X1.5 Mult.",
     "trigger": {
-      "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "when": "on_hand_played",
+      "effects": [
+        {
+          "type": "x_mult_per_joker_rarity",
+          "rarity": "uncommon",
+          "value": 0.5
+        }
+      ]
+    }
   },
   {
     "id": "blackboard",
     "name": "Blackboard",
-    "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Blackboard)",
+    "rarity": "uncommon",
+    "cost": 6,
+    "effect": "X3 Mult if all cards held in hand are Spades or Clubs.",
     "trigger": {
-      "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "when": "on_hand_played",
+      "condition": {
+        "allHeldSuit": [
+          "spades",
+          "clubs"
+        ]
+      },
+      "effects": [
+        {
+          "type": "x_mult",
+          "value": 3
+        }
+      ]
+    }
   },
   {
     "id": "burglar",
     "name": "Burglar",
-    "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Burglar)",
+    "rarity": "uncommon",
+    "cost": 6,
+    "effect": "+3 hands when round begins, lose all discards.",
     "trigger": {
       "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "effects": [
+        {
+          "type": "utility"
+        }
+      ]
+    }
   },
   {
     "id": "burnt_joker",
     "name": "Burnt Joker",
-    "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Burnt_Joker)",
+    "rarity": "rare",
+    "cost": 8,
+    "effect": "First discard each round upgrades poker hand level.",
     "trigger": {
       "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "effects": [
+        {
+          "type": "utility"
+        }
+      ]
+    }
   },
   {
     "id": "campfire",
     "name": "Campfire",
-    "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Campfire)",
+    "rarity": "uncommon",
+    "cost": 9,
+    "effect": "Gains X0.25 Mult when a card is sold (resets when boss defeated).",
     "trigger": {
-      "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "when": "on_hand_played",
+      "effects": [
+        {
+          "type": "x_mult_counter",
+          "id": "campfire",
+          "value": 0.25
+        }
+      ]
+    }
   },
   {
     "id": "card_sharp",
     "name": "Card Sharp",
-    "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Card_Sharp)",
+    "rarity": "uncommon",
+    "cost": 6,
+    "effect": "X3 Mult if poker hand played has been played already this round.",
     "trigger": {
-      "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "when": "on_hand_played",
+      "condition": {
+        "repeatHand": true
+      },
+      "effects": [
+        {
+          "type": "x_mult",
+          "value": 3
+        }
+      ]
+    }
   },
   {
     "id": "cartomancer",
     "name": "Cartomancer",
-    "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Cartomancer)",
+    "rarity": "uncommon",
+    "cost": 6,
+    "effect": "Creates a Tarot card when Blind is selected.",
     "trigger": {
       "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "effects": [
+        {
+          "type": "utility"
+        }
+      ]
+    }
   },
   {
     "id": "castle",
     "name": "Castle",
-    "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Castle)",
+    "rarity": "uncommon",
+    "cost": 6,
+    "effect": "Gains +3 Chips per discarded card of selected suit (changes per round).",
     "trigger": {
-      "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "when": "on_hand_played",
+      "effects": [
+        {
+          "type": "add_chips_counter",
+          "id": "castle"
+        }
+      ]
+    }
   },
   {
     "id": "certificate",
     "name": "Certificate",
-    "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Certificate)",
+    "rarity": "uncommon",
+    "cost": 6,
+    "effect": "When round begins, add a random playing card with a random seal to your hand.",
     "trigger": {
       "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "effects": [
+        {
+          "type": "utility"
+        }
+      ]
+    }
   },
   {
     "id": "chaos",
     "name": "Chaos the Clown",
     "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Chaos_the_Clown)",
+    "cost": 4,
+    "effect": "One free reroll per shop visit.",
     "trigger": {
       "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "effects": [
+        {
+          "type": "utility"
+        }
+      ]
+    }
   },
   {
     "id": "cloud_9",
     "name": "Cloud 9",
-    "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Cloud_9)",
+    "rarity": "uncommon",
+    "cost": 7,
+    "effect": "$1 per 9 in deck at end of round.",
     "trigger": {
       "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "effects": [
+        {
+          "type": "meta_money"
+        }
+      ]
+    }
   },
   {
     "id": "credit_card",
     "name": "Credit Card",
     "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Credit_Card)",
+    "cost": 1,
+    "effect": "Go up to -$20 in debt.",
     "trigger": {
       "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "effects": [
+        {
+          "type": "utility"
+        }
+      ]
+    }
   },
   {
     "id": "delayed_grat",
     "name": "Delayed Gratification",
     "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Delayed_Gratification)",
+    "cost": 4,
+    "effect": "$2 per remaining discard at end of round (if no discards used).",
     "trigger": {
       "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "effects": [
+        {
+          "type": "meta_money"
+        }
+      ]
+    }
   },
   {
     "id": "diet_cola",
     "name": "Diet Cola",
-    "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Diet_Cola)",
+    "rarity": "uncommon",
+    "cost": 6,
+    "effect": "Sell to create a free Double Tag.",
     "trigger": {
       "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "effects": [
+        {
+          "type": "utility"
+        }
+      ]
+    }
   },
   {
     "id": "dna",
     "name": "DNA",
-    "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/DNA)",
+    "rarity": "rare",
+    "cost": 8,
+    "effect": "On first hand of round, if exactly 1 card played, add a copy to deck.",
     "trigger": {
       "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "effects": [
+        {
+          "type": "utility"
+        }
+      ]
+    }
   },
   {
     "id": "drivers_license",
     "name": "Driver's License",
-    "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Driver's_License)",
+    "rarity": "rare",
+    "cost": 7,
+    "effect": "X3 Mult if you have 16+ Enhanced cards in deck.",
     "trigger": {
-      "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "when": "on_hand_played",
+      "effects": [
+        {
+          "type": "x_mult_if_deck_enhancement_count",
+          "enhancement": "enhanced_total",
+          "threshold": 16,
+          "value": 3
+        }
+      ]
+    }
   },
   {
     "id": "egg",
     "name": "Egg",
     "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Egg)",
+    "cost": 4,
+    "effect": "Gains $3 sell value at end of round.",
     "trigger": {
       "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "effects": [
+        {
+          "type": "meta_sell_value",
+          "value": 3
+        }
+      ]
+    }
   },
   {
     "id": "erosion",
     "name": "Erosion",
-    "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Erosion)",
+    "rarity": "uncommon",
+    "cost": 6,
+    "effect": "+4 Mult for each card below 52 in your full deck.",
     "trigger": {
-      "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "when": "on_hand_played",
+      "effects": [
+        {
+          "type": "add_chips_per_card_below_deck",
+          "value": 4
+        }
+      ]
+    }
   },
   {
     "id": "faceless",
     "name": "Faceless Joker",
     "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Faceless_Joker)",
+    "cost": 4,
+    "effect": "Earn $5 if poker hand played contains 3+ face cards discarded.",
     "trigger": {
       "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "effects": [
+        {
+          "type": "meta_money"
+        }
+      ]
+    }
   },
   {
     "id": "flash",
     "name": "Flash Card",
-    "rarity": "common",
+    "rarity": "uncommon",
     "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Flash_Card)",
+    "effect": "Gains +2 Mult per shop reroll.",
     "trigger": {
-      "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "when": "on_hand_played",
+      "effects": [
+        {
+          "type": "add_mult_counter",
+          "id": "flash"
+        }
+      ]
+    }
   },
   {
     "id": "flower_pot",
     "name": "Flower Pot",
-    "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Flower_Pot)",
+    "rarity": "uncommon",
+    "cost": 6,
+    "effect": "X3 Mult if scoring hand contains a Diamond, Heart, Club, and Spade.",
     "trigger": {
-      "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "when": "on_hand_played",
+      "condition": {
+        "allSuitsPlayed": true
+      },
+      "effects": [
+        {
+          "type": "x_mult",
+          "value": 3
+        }
+      ]
+    }
   },
   {
     "id": "fortune_teller",
     "name": "Fortune Teller",
     "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Fortune_Teller)",
+    "cost": 6,
+    "effect": "+1 Mult per Tarot card used this run.",
     "trigger": {
-      "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "when": "on_hand_played",
+      "effects": [
+        {
+          "type": "add_mult_counter",
+          "id": "fortune_teller"
+        }
+      ]
+    }
   },
   {
     "id": "gift",
     "name": "Gift Card",
-    "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Gift_Card)",
+    "rarity": "uncommon",
+    "cost": 6,
+    "effect": "Adds $1 sell value to every Joker and Consumable at end of round.",
     "trigger": {
       "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "effects": [
+        {
+          "type": "meta_sell_value",
+          "value": 1
+        }
+      ]
+    }
   },
   {
     "id": "glass_joker",
     "name": "Glass Joker",
-    "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Glass_Joker)",
+    "rarity": "uncommon",
+    "cost": 6,
+    "effect": "Gains X0.75 Mult per Glass card destroyed (scaler).",
     "trigger": {
-      "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "when": "on_hand_played",
+      "effects": [
+        {
+          "type": "x_mult_counter",
+          "id": "glass_joker",
+          "value": 0.75
+        }
+      ]
+    }
   },
   {
     "id": "golden",
     "name": "Golden Joker",
     "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Golden_Joker)",
+    "cost": 6,
+    "effect": "Earn $4 at end of round.",
     "trigger": {
       "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "effects": [
+        {
+          "type": "meta_money",
+          "value": 4
+        }
+      ]
+    }
   },
   {
     "id": "ticket",
     "name": "Golden Ticket",
     "rarity": "common",
     "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Golden_Ticket)",
+    "effect": "Played Gold cards earn $4 when triggered.",
     "trigger": {
-      "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "when": "on_scored",
+      "condition": {
+        "enhancement": [
+          "gold"
+        ]
+      },
+      "effects": [
+        {
+          "type": "add_money",
+          "value": 4
+        }
+      ]
+    }
   },
   {
     "id": "hallucination",
     "name": "Hallucination",
     "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Hallucination)",
+    "cost": 4,
+    "effect": "1 in 2 chance to create a Tarot card when any Booster Pack is opened.",
     "trigger": {
       "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "effects": [
+        {
+          "type": "utility"
+        }
+      ]
+    }
   },
   {
     "id": "hit_the_road",
     "name": "Hit the Road",
-    "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Hit_the_Road)",
+    "rarity": "rare",
+    "cost": 8,
+    "effect": "Gains X0.5 Mult per Jack discarded this round.",
     "trigger": {
-      "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "when": "on_hand_played",
+      "effects": [
+        {
+          "type": "x_mult_counter",
+          "id": "hit_the_road",
+          "value": 0.5
+        }
+      ]
+    }
   },
   {
     "id": "hologram",
     "name": "Hologram",
-    "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Hologram)",
+    "rarity": "uncommon",
+    "cost": 7,
+    "effect": "Gains X0.25 Mult per playing card added to deck.",
     "trigger": {
-      "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "when": "on_hand_played",
+      "effects": [
+        {
+          "type": "x_mult_counter",
+          "id": "hologram",
+          "value": 0.25
+        }
+      ]
+    }
   },
   {
     "id": "invisible",
     "name": "Invisible Joker",
-    "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Invisible_Joker)",
+    "rarity": "rare",
+    "cost": 8,
+    "effect": "After 2 rounds, sell to duplicate a random Joker.",
     "trigger": {
       "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "effects": [
+        {
+          "type": "utility"
+        }
+      ]
+    }
   },
   {
     "id": "joker_stencil",
     "name": "Joker Stencil",
-    "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Joker_Stencil)",
+    "rarity": "uncommon",
+    "cost": 8,
+    "effect": "X1 Mult per empty Joker slot (including itself).",
     "trigger": {
-      "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "when": "on_hand_played",
+      "effects": [
+        {
+          "type": "x_mult_per_empty_slot",
+          "value": 1
+        }
+      ]
+    }
   },
   {
     "id": "luchador",
     "name": "Luchador",
-    "rarity": "common",
+    "rarity": "uncommon",
     "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Luchador)",
+    "effect": "Sell to disable current Boss Blind.",
     "trigger": {
       "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "effects": [
+        {
+          "type": "utility"
+        }
+      ]
+    }
   },
   {
     "id": "lucky_cat",
     "name": "Lucky Cat",
-    "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Lucky_Cat)",
+    "rarity": "uncommon",
+    "cost": 6,
+    "effect": "Gains X0.25 Mult per Lucky card successfully triggered.",
     "trigger": {
-      "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "when": "on_hand_played",
+      "effects": [
+        {
+          "type": "x_mult_counter",
+          "id": "lucky_cat",
+          "value": 0.25
+        }
+      ]
+    }
   },
   {
     "id": "madness",
     "name": "Madness",
-    "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Madness)",
+    "rarity": "uncommon",
+    "cost": 7,
+    "effect": "Gains X0.5 Mult on Small/Big Blind selection (destroys random Joker).",
     "trigger": {
-      "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "when": "on_hand_played",
+      "effects": [
+        {
+          "type": "x_mult_counter",
+          "id": "madness",
+          "value": 0.5
+        }
+      ]
+    }
   },
   {
     "id": "mail",
     "name": "Mail-In Rebate",
     "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Mail-In_Rebate)",
+    "cost": 4,
+    "effect": "$5 per discarded card of selected rank (changes per round).",
     "trigger": {
       "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "effects": [
+        {
+          "type": "meta_money"
+        }
+      ]
+    }
   },
   {
     "id": "marble",
     "name": "Marble Joker",
-    "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Marble_Joker)",
+    "rarity": "uncommon",
+    "cost": 6,
+    "effect": "When Blind is selected, add a Stone card to deck.",
     "trigger": {
       "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "effects": [
+        {
+          "type": "utility"
+        }
+      ]
+    }
   },
   {
     "id": "matador",
     "name": "Matador",
-    "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Matador)",
+    "rarity": "uncommon",
+    "cost": 7,
+    "effect": "Earn $8 if hand played triggers the Boss Blind ability.",
     "trigger": {
       "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "effects": [
+        {
+          "type": "utility"
+        }
+      ]
+    }
   },
   {
     "id": "merry_andy",
     "name": "Merry Andy",
-    "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Merry_Andy)",
+    "rarity": "uncommon",
+    "cost": 7,
+    "effect": "+3 discards per round, -1 hand size.",
     "trigger": {
       "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "effects": [
+        {
+          "type": "utility"
+        }
+      ]
+    }
   },
   {
     "id": "midas_mask",
     "name": "Midas Mask",
-    "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Midas_Mask)",
+    "rarity": "uncommon",
+    "cost": 7,
+    "effect": "All face cards become Gold when scored.",
     "trigger": {
       "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "effects": [
+        {
+          "type": "utility"
+        }
+      ]
+    }
   },
   {
     "id": "mr_bones",
     "name": "Mr. Bones",
-    "rarity": "common",
+    "rarity": "uncommon",
     "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Mr._Bones)",
+    "effect": "Saves you from death (at least 25% of required) once, then sold.",
     "trigger": {
       "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "effects": [
+        {
+          "type": "utility"
+        }
+      ]
+    }
   },
   {
     "id": "obelisk",
     "name": "Obelisk",
-    "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Obelisk)",
+    "rarity": "rare",
+    "cost": 8,
+    "effect": "Gains X0.2 Mult per consecutive hand without playing your most-played hand.",
     "trigger": {
-      "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "when": "on_hand_played",
+      "effects": [
+        {
+          "type": "x_mult_counter",
+          "id": "obelisk",
+          "value": 0.2
+        }
+      ]
+    }
   },
   {
     "id": "oops",
     "name": "Oops! All 6s",
-    "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Oops!_All_6s)",
+    "rarity": "uncommon",
+    "cost": 4,
+    "effect": "Doubles all listed probabilities (e.g. 1 in 4 -> 1 in 2).",
     "trigger": {
       "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "effects": [
+        {
+          "type": "doubles_probabilities"
+        }
+      ]
+    }
   },
   {
     "id": "popcorn",
     "name": "Popcorn",
     "rarity": "common",
     "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Popcorn)",
+    "effect": "+20 Mult, -4 Mult per round played.",
     "trigger": {
-      "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "when": "on_hand_played",
+      "effects": [
+        {
+          "type": "add_mult_scaling",
+          "value": 20,
+          "decayPerHand": 4
+        }
+      ]
+    }
   },
   {
     "id": "ramen",
     "name": "Ramen",
-    "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Ramen)",
+    "rarity": "uncommon",
+    "cost": 6,
+    "effect": "X2 Mult, -X0.01 per played card consumed.",
     "trigger": {
-      "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "when": "on_hand_played",
+      "effects": [
+        {
+          "type": "x_mult_decay",
+          "value": 2,
+          "decayPerCard": 0.01
+        }
+      ]
+    }
   },
   {
     "id": "reserved_parking",
     "name": "Reserved Parking",
     "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Reserved_Parking)",
+    "cost": 6,
+    "effect": "Each face card held in hand has 1 in 2 chance for $1.",
     "trigger": {
-      "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "when": "on_held_in_hand",
+      "condition": {
+        "face": true
+      },
+      "effects": [
+        {
+          "type": "expected_money",
+          "value": 1,
+          "probability": 0.5
+        }
+      ]
+    }
   },
   {
     "id": "riff_raff",
     "name": "Riff-Raff",
     "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Riff-Raff)",
+    "cost": 6,
+    "effect": "When Blind is selected, create 2 random common Jokers (must have room).",
     "trigger": {
       "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "effects": [
+        {
+          "type": "utility"
+        }
+      ]
+    }
   },
   {
     "id": "rocket",
     "name": "Rocket",
-    "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Rocket)",
+    "rarity": "uncommon",
+    "cost": 6,
+    "effect": "$1 at end of round; +$2 each Boss defeated.",
     "trigger": {
       "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "effects": [
+        {
+          "type": "meta_money"
+        }
+      ]
+    }
   },
   {
     "id": "satellite",
     "name": "Satellite",
-    "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Satellite)",
+    "rarity": "uncommon",
+    "cost": 6,
+    "effect": "$1 at end of round per unique Planet card used this run.",
     "trigger": {
       "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "effects": [
+        {
+          "type": "meta_money"
+        }
+      ]
+    }
   },
   {
     "id": "seance",
     "name": "Séance",
-    "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Séance)",
+    "rarity": "uncommon",
+    "cost": 6,
+    "effect": "If played hand is a Straight Flush, create a random Spectral.",
     "trigger": {
       "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "effects": [
+        {
+          "type": "utility"
+        }
+      ]
+    }
   },
   {
     "id": "seeing_double",
     "name": "Seeing Double",
-    "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Seeing_Double)",
+    "rarity": "uncommon",
+    "cost": 6,
+    "effect": "X2 Mult if scoring hand has a Club card and a card of any other suit.",
     "trigger": {
-      "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "when": "on_hand_played",
+      "effects": [
+        {
+          "type": "x_mult_if_seeing_double",
+          "value": 2
+        }
+      ]
+    }
   },
   {
     "id": "ring_master",
     "name": "Showman",
-    "rarity": "common",
+    "rarity": "uncommon",
     "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Showman)",
+    "effect": "Allows duplicate Jokers, Tarots, and Spectrals in shop.",
     "trigger": {
       "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "effects": [
+        {
+          "type": "utility"
+        }
+      ]
+    }
   },
   {
     "id": "sixth_sense",
     "name": "Sixth Sense",
-    "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Sixth_Sense)",
+    "rarity": "rare",
+    "cost": 6,
+    "effect": "If first hand of round is single 6, destroy it & create a Spectral.",
     "trigger": {
       "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "effects": [
+        {
+          "type": "utility"
+        }
+      ]
+    }
   },
   {
     "id": "space",
     "name": "Space Joker",
-    "rarity": "common",
+    "rarity": "uncommon",
     "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Space_Joker)",
+    "effect": "1 in 4 chance to upgrade played poker hand level.",
     "trigger": {
       "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "effects": [
+        {
+          "type": "utility"
+        }
+      ]
+    }
   },
   {
     "id": "trousers",
     "name": "Spare Trousers",
-    "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Spare_Trousers)",
+    "rarity": "uncommon",
+    "cost": 6,
+    "effect": "Gains +2 Mult per played hand containing Two Pair.",
     "trigger": {
-      "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "when": "on_hand_played",
+      "effects": [
+        {
+          "type": "add_mult_counter",
+          "id": "trousers"
+        }
+      ]
+    }
   },
   {
     "id": "splash",
     "name": "Splash",
     "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Splash)",
+    "cost": 3,
+    "effect": "Every played card counts in scoring.",
     "trigger": {
       "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "effects": [
+        {
+          "type": "splash"
+        }
+      ]
+    }
   },
   {
     "id": "superposition",
     "name": "Superposition",
-    "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Superposition)",
+    "rarity": "rare",
+    "cost": 8,
+    "effect": "Create a Tarot if poker hand contains an Ace and a Straight.",
     "trigger": {
       "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "effects": [
+        {
+          "type": "utility"
+        }
+      ]
+    }
   },
   {
     "id": "swashbuckler",
     "name": "Swashbuckler",
     "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Swashbuckler)",
+    "cost": 4,
+    "effect": "Adds sell value of all other Jokers to Mult.",
     "trigger": {
-      "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "when": "on_hand_played",
+      "effects": [
+        {
+          "type": "add_mult_counter",
+          "id": "swashbuckler"
+        }
+      ]
+    }
   },
   {
     "id": "throwback",
     "name": "Throwback",
-    "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Throwback)",
+    "rarity": "uncommon",
+    "cost": 6,
+    "effect": "X0.25 Mult per skipped Blind this run.",
     "trigger": {
-      "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "when": "on_hand_played",
+      "effects": [
+        {
+          "type": "x_mult_counter",
+          "id": "throwback",
+          "value": 0.25
+        }
+      ]
+    }
   },
   {
     "id": "todo_list",
     "name": "To Do List",
     "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/To_Do_List)",
+    "cost": 4,
+    "effect": "Earn $4 if poker hand played is the chosen hand type (changes per round).",
     "trigger": {
       "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "effects": [
+        {
+          "type": "utility"
+        }
+      ]
+    }
   },
   {
     "id": "to_the_moon",
     "name": "To the Moon",
-    "rarity": "common",
+    "rarity": "uncommon",
     "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/To_the_Moon)",
+    "effect": "+$1 extra interest per dollar earned.",
     "trigger": {
       "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "effects": [
+        {
+          "type": "meta_money"
+        }
+      ]
+    }
   },
   {
     "id": "trading",
     "name": "Trading Card",
     "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Trading_Card)",
+    "cost": 4,
+    "effect": "First discard each round destroys all single-card discards for $3 each.",
     "trigger": {
       "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "effects": [
+        {
+          "type": "meta_money"
+        }
+      ]
+    }
   },
   {
     "id": "turtle_bean",
     "name": "Turtle Bean",
-    "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Turtle_Bean)",
+    "rarity": "uncommon",
+    "cost": 6,
+    "effect": "+5 hand size, decays by -1 each round (passive).",
     "trigger": {
       "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "effects": [
+        {
+          "type": "extra_hand_size",
+          "value": 5
+        }
+      ]
+    }
   },
   {
     "id": "vagabond",
     "name": "Vagabond",
-    "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Vagabond)",
+    "rarity": "rare",
+    "cost": 8,
+    "effect": "Create a Tarot card when poker hand is played with $4 or less.",
     "trigger": {
       "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "effects": [
+        {
+          "type": "utility"
+        }
+      ]
+    }
   },
   {
     "id": "vampire",
     "name": "Vampire",
-    "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Vampire)",
+    "rarity": "uncommon",
+    "cost": 7,
+    "effect": "Gains X0.1 Mult per scored Enhanced card (removes enhancement).",
     "trigger": {
-      "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "when": "on_hand_played",
+      "effects": [
+        {
+          "type": "x_mult_counter",
+          "id": "vampire",
+          "value": 0.1
+        }
+      ]
+    }
   },
   {
     "id": "wee",
     "name": "Wee Joker",
-    "rarity": "common",
-    "cost": 5,
-    "effect": "(stub — needs effect text and trigger; see balatrowiki.org/w/Wee_Joker)",
+    "rarity": "rare",
+    "cost": 8,
+    "effect": "Gains +8 Chips per scored 2.",
     "trigger": {
-      "when": "passive",
-      "effects": []
-    },
-    "_stub": true
+      "when": "on_scored",
+      "condition": {
+        "rank": [
+          "2"
+        ]
+      },
+      "effects": [
+        {
+          "type": "add_chips_counter",
+          "id": "wee"
+        }
+      ]
+    }
   }
 ]
